@@ -1,6 +1,10 @@
 import java.util.Date;
 
+<<<<<<< HEAD
 public class Votacio extends Esdeveniment{
+=======
+public class Votacio extends Esdeveniments{
+>>>>>>> 302e3fa86cf9b0285cc978e3004be4d78168d855
 
 	public Votacio(int codi, String descripcio, Date data) {
 		this.codi = codi;
