@@ -1,4 +1,5 @@
 import java.util.Date;
+
 	public abstract class Esdeveniment {
 		int codi;
 		String descripcio;

@@ -5,9 +5,9 @@ public class Solucio {
 	String nom;
 	Date data;
 	double tempsExec;
-	String solucio; //Inacabado, txt
+	String solucio; //Inacabado, txt...
 	
-	//Falten les clases CrearComunitats i EliminarComunitats, SON OPCIONALS
+	//Falten les clases CrearComunitats i EliminarComunitats (SON OPCIONALS)
 	
 	public Solucio(String nom, Date data, double tempsExec, String solucio){
 		this.nom = nom;

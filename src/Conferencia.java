@@ -1,6 +1,5 @@
 import java.util.Date;
 
-
 public class Conferencia extends Esdeveniment {
 
 		public Conferencia(int codi, String descripcio, Date data) {
