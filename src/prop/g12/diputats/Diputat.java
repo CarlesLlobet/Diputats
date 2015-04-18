@@ -1,14 +1,18 @@
 package prop.g12.diputats;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Diputat {
 
 	public String nom;
 	public TIdeologia ideologia;
-	public String procedencia;
+	public String procedencia;	
 	
-	public Diputat(String n, TIdeologia i, String p) {
+	public Diputat(String n, String i, String p) {
 		nom = n;
-		ideologia = i;
+		ideologia = getIdeologia(i);
 		procedencia = p;
 	}
 	
@@ -16,14 +20,10 @@ public class Diputat {
 		return nom;
 	}
 
-	public String getIdeologia() {
-		switch (ideologia) {
-			case esquerra: return "esquerra";
-				
-			case dreta: return "dreta";
-				
-			default: return "centre";
-		}
+	public TIdeologia getIdeologia(String s) {
+		if (s.equals("esquerra"))return TIdeologia.esquerra;				
+		else if (s.equals("dreta")) return TIdeologia.dreta;
+		else return TIdeologia.centre;
 	}
 	
 	public String getProcedencia() {
@@ -44,4 +44,6 @@ public class Diputat {
 	public void setProcedencia(String p) {
 		procedencia = p;
 	}
+	
+	
 }
