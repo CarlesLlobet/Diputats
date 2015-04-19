@@ -2,8 +2,7 @@ package prop.g12.diputats;
 
 public class Empresa {
 	
-	public String nom;
-	public String ambit;	
+	private String nom, ambit;	
 
 	public Empresa(String nom, String ambit) {
 		this.nom = nom;
