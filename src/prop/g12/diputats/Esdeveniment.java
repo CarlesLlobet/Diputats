@@ -2,9 +2,9 @@ package prop.g12.diputats;
 import java.util.*;
 
 public abstract class Esdeveniment {
-	int codi;
-	String descripcio;
-	Date data;
+	protected int codi;
+	protected String descripcio;
+	protected Date data;
 	
 	public int getCodi() {
 		return codi;

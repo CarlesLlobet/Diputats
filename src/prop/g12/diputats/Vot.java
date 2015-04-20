@@ -1,17 +1,17 @@
 package prop.g12.diputats;
 
 public class Vot {
-	TVot vot;
+	private TVot vot;
 	
 	public Vot(TVot vot) {
 	    this.vot = vot;
 	}
 	    
-	public TVot get_vot() {
+	public TVot getVot() {
 		return vot;
 	}
 	
-	public void set_vot(TVot vot_nou) {
-		vot = vot_nou;
+	public void setVot(TVot vot_nou) {
+		this.vot = vot_nou;
 	}
 }

@@ -1,14 +1,12 @@
 package prop.g12.diputats;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Diputat {
 
-	public String nom;
-	public TIdeologia ideologia;
-	public String procedencia;	
+	private String nom;
+	private TIdeologia ideologia;
+	private String procedencia;	
 	
 	public Diputat(String n, String i, String p) {
 		nom = n;
