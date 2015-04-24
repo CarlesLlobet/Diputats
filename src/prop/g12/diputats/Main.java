@@ -98,7 +98,7 @@ public class Main {
 	        panel.add(chartPanel);
 	        
 	        //Guardar grafica
-	        ChartUtilities.saveChartAsJPEG(new File("grafico.jpg"), chart, 1000, 600);
+	        ChartUtilities.saveChartAsJPEG(new File("grafica3D.jpg"), chart, 1000, 600);
 	    }
 	}
 	
@@ -134,7 +134,7 @@ public class Main {
 	        panel.add(chartPanel);
 	        
 	      //Guardar grafica
-	        ChartUtilities.saveChartAsJPEG(new File("grafico.jpg"), chart, 1000, 600);
+	        ChartUtilities.saveChartAsJPEG(new File("grafica_linial.jpg"), chart, 1000, 600);
 	    }
 	}
 	
