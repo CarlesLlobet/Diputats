@@ -1,11 +1,12 @@
 package prop.g12.diputats;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class ConjuntDades {
 	private ArrayList<Diputat> diputats;
 	private ArrayList<Empresa> empreses;
 	private ArrayList<Vot> vots;
+	private Map<Integer,Diputat> congres;
 	
 	public ArrayList<Diputat> getDiputats() {return diputats;}
 	
@@ -19,15 +20,13 @@ public class ConjuntDades {
 
 	public void setVots(ArrayList<Vot> vots) {this.vots = vots;}
 	
+	public Map<Integer, Diputat> getCongres() {return congres;};
+	
+	public void setCongres(Map<Integer,Diputat> congres) {this.congres = congres;}
+	
 	private static final ConjuntDades conjuntDades = new ConjuntDades();
 	
 	public static ConjuntDades getInstance() {return conjuntDades;}
-	
-	public void afegirDiputat(Diputat d) {diputats.add(d);}
-	
-	public void afegirEmpresa(Empresa e) {empreses.add(e);}
-	
-	public void afegirVot(Vot v) {vots.add(v);}	
 	
 	//per accedir a les dades, des de la classe que sigui:
 	//(per exemple)
