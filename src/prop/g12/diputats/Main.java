@@ -17,7 +17,7 @@ public class Main {
 	public static void io() {
 		file = new File("Diputats.txt");
 		out = null;
-		try 
+		try {
 			out = new PrintWriter("output.txt");
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
