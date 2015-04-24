@@ -19,8 +19,10 @@ public class Graf {
 	}
 	
 	public void afegirAresta(Integer idNode1, Integer  idNode2, Integer pes) {
-		adjacencia[idNode1][idNode2] = pes;
-		adjacencia[idNode2][idNode1] = pes;
+		if (pes >= 0) {
+			adjacencia[idNode1][idNode2] = pes;
+			adjacencia[idNode2][idNode1] = pes;
+		}
 	}
 	
 	public int getNumNodes() {
