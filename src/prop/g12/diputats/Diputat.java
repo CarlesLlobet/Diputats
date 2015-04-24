@@ -4,6 +4,9 @@ import java.util.*;
 
 public class Diputat {
 
+	private ArrayList<Esdeveniment> esdv;
+	private ArrayList<Empresa> empr;
+	private ArrayList<Votacio> vot;
 	private String nom;
 	private TIdeologia ideologia;
 	private String procedencia;	
@@ -36,7 +39,7 @@ public class Diputat {
 		if (i.equals("esquerra")) ideologia = TIdeologia.esquerra;
 		else if (i.equals("dreta")) ideologia = TIdeologia.dreta;
 		else if (i.equals("centre")) ideologia = TIdeologia.centre;
-		//else excepció			
+		else System.out.print("No existeix la ideologia amb nom"+ i);		
 	}
 	
 	public void setProcedencia(String p) {
