@@ -2,6 +2,7 @@ package prop.g12.diputats;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.data.general.DefaultPieDataset;
@@ -61,7 +63,7 @@ public class Main {
 	
 	public static class Ventana extends JFrame{
 	    JPanel panel;
-	    public Ventana(){
+	    public Ventana() throws IOException{
 	        setTitle("Como Hacer Graficos con Java");
 	        setSize(800,600);
 	        setLocationRelativeTo(null);
@@ -70,7 +72,7 @@ public class Main {
 	        init();
 	    }
 	 
-	    private void init() {
+	    private void init() throws IOException {
 	        panel = new JPanel();
 	        getContentPane().add(panel);
 	        // Fuente de Datos
@@ -92,11 +94,14 @@ public class Main {
 	        // Mostrar Grafico
 	        ChartPanel chartPanel = new ChartPanel(chart);
 	        panel.add(chartPanel);
+	        
+	        //Guardar grafica
+	        ChartUtilities.saveChartAsJPEG(new File("grafico.jpg"), chart, 1000, 600);
 	    }
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		io();
 		afegirDiputats();
 		//afegirEmpreses();
@@ -104,5 +109,6 @@ public class Main {
 		out.close();
 		
 		new Ventana().setVisible(true);
+		
 	}
 }
