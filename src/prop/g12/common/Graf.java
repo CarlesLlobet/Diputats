@@ -1,39 +1,42 @@
 package prop.g12.common;
 
-import java.util.Map;
-import java.util.Vector;
-
 public class Graf {
-	Vector<Vector<Integer>> adjacencia;
-	int numNodes;
-	Map<Integer, Object> nodes;
+	Integer[][] adjacencia;
+	Integer numNodes;
+	Object[] nodes;
+	int c;
 	
 	public void crearGraf(int n) {
-		
+		numNodes = n;
+		adjacencia = new Integer[numNodes][numNodes];
+		nodes = new Object[numNodes];
+		c = 0;
 	}
 	
 	public void afegirNode(Object node) {
-		
+		nodes[c] = node;
+		++c;
 	}
 	
-	public void afegirAresta(int idNode1, int  idNode2, double pes) {
-		
+	public void afegirAresta(Integer idNode1, Integer  idNode2, Integer pes) {
+		adjacencia[idNode1][idNode2] = pes;
+		adjacencia[idNode2][idNode1] = pes;
 	}
 	
-	public void getNumNodes() {
-		
+	public int getNumNodes() {
+		return numNodes; 
 	}
 	
-	public void getNode(int idNode) {
-		
+	public Object getNode(Integer idNode) {
+		return nodes[idNode];
 	}
 	
-	public void getNodes() {
-		
+	public Object[] getNodes() {
+		return nodes;
 	}
 	
-	public void getAresta(int idNode1, int idNode2) {
-		
+	public Integer getAresta(int idNode1, int idNode2) {
+		return adjacencia[idNode1][idNode2];
 	}
 
 }
