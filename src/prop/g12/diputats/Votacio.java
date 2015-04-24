@@ -1,8 +1,10 @@
 package prop.g12.diputats;
-import java.util.Date;
+import java.util.*;
 
 
 public class Votacio extends Esdeveniment{
+	
+	private Map<Diputat,Vot> vots;
 
 	public Votacio(int codi, String descripcio, Date data) {
 		this.codi = codi;
@@ -32,6 +34,11 @@ public class Votacio extends Esdeveniment{
 	
 	public void setData(Date data) {
 		super.setData(data);
+	}
+	
+	public void afegirVot(Vot v) {
+		Diputat d = v.getDiputat();
+		vots.put(d, v);
 	}
 	
 }
