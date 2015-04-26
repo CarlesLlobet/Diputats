@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 
 public class NewmannGirvan {
-
+    // E
 	
 	Integer[][] grafSol;
 	static Integer[][] edges;
