@@ -28,20 +28,18 @@ public class ConjuntDades {
 	
 	public static ConjuntDades getInstance() {return conjuntDades;}
 	
-	/*Codi del Victor M.
-	 * 
-	 * public void Baixa_Congres(String nom) {
-        java.util.Iterator<Integer> it = Congres.keySet().iterator();
+	public void baixaCongres(String nom) {
+        java.util.Iterator<Integer> it = congres.keySet().iterator();
         boolean find = false;
         while(it.hasNext() && !find){
             Integer K = it.next();
-            Diputat dip = Congres.get(K);
-            if ((dip.getNom()).equals(nom)) {Congres.remove(K); find = true;}
+            Diputat dip = congres.get(K);
+            if ((dip.getNom()).equals(nom)) {congres.remove(K); find = true;}
         }
         if (!find) {
         	System.out.print("No existeix el diputat amb nom"+ nom);
         }
-	}*/
+	}
 	
 	//per accedir a les dades, des de la classe que sigui:
 	//(per exemple)

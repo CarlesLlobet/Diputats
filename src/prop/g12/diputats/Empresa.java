@@ -31,5 +31,8 @@ public class Empresa {
 	public void afegirDiputat(Diputat d) {
 		if(!diputats.contains(d)) diputats.add(d);
 	}
-
+	
+	public ArrayList<Diputat> getDiputats() {
+		return diputats;
+	}
 }
