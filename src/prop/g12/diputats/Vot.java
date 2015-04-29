@@ -5,12 +5,14 @@ public class Vot {
 	private Diputat diputat;
 	private Votacio votacio;
 	
-	public Vot(TVot vot) {
-	    this.vot = vot;
+	public Vot(String vot) {
+	    this.vot = getVot(vot);
 	}
 	    
-	public TVot getVot() {
-		return vot;
+	public TVot getVot(String vot) {
+		if (vot.equals("favor"))return TVot.favor;				
+		else if (vot.equals("dreta")) return TVot.contra;
+		else return TVot.abstencio;
 	}
 	
 	public void setVot(TVot vot_nou) {

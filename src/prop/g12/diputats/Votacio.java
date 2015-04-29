@@ -36,8 +36,7 @@ public class Votacio extends Esdeveniment{
 		super.setData(data);
 	}
 	
-	public void afegirVot(Vot v) {
-		Diputat d = v.getDiputat();
+	public void afegirVot(Vot v, Diputat d) {
 		vots.put(d, v);
 	}
 	
