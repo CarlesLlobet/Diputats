@@ -9,9 +9,9 @@ public class DriverVotacio {
 	Votacio v;
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
-	public void TestVotacio() {
+	public void TestVotacio() throws ParseException {
 		Date d = sdf.parse("21/12/2012");
-		v.Votacio(11,"prova",d);
+		v = new Votacio(11,"prova",d);
 	}
 	
 	public void testgetCodi(){

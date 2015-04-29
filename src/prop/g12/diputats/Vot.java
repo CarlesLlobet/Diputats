@@ -6,38 +6,38 @@ public class Vot {
 	private Votacio votacio;
 	
 	public Vot(String vot) {
-	    this.vot = stringToVot(vot);
+	    this.vot = StringToVot(vot);
 	}
 	    
-	public TVot getVot() {
+	public TVot GetVot() {
 		return vot;
 	}
 	
-	public TVot stringToVot(String a) {
+	public TVot StringToVot(String a) {
 		if (a.equals("favor"))return TVot.favor;				
 		else if (a.equals("contra")) return TVot.contra;
 		else return TVot.abstencio;
 	}
 	
-	public void setVot(String vot) {
+	public void SetVot(String vot) {
 		if (vot.equals("favor"))this.vot = TVot.favor;				
 		else if (vot.equals("contra")) this.vot = TVot.contra;
 		else this.vot = TVot.abstencio;
 	}
 
-	public Diputat getDiputat() {
+	public Diputat GetDiputat() {
 		return diputat;
 	}
 
-	public void setDiputat(Diputat diputat) {
+	public void SetDiputat(Diputat diputat) {
 		this.diputat = diputat;
 	}
 
-	public Votacio getVotacio() {
+	public Votacio GetVotacio() {
 		return votacio;
 	}
 
-	public void setVotacio(Votacio votacio) {
+	public void SetVotacio(Votacio votacio) {
 		this.votacio = votacio;
 	}
 }
