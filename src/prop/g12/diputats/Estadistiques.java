@@ -26,7 +26,6 @@ public class Estadistiques {
 		return nom;
 	}
 	
-	
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
