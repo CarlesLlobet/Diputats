@@ -1,19 +1,26 @@
 package prop.g12.diputats;
 
-import java.util.ArrayList;
-
 public class StubDiputat {
 	
-	private Diputat d = new Diputat("Joan Lopez", "esquerra", "LA");
-	private Diputat d2 = new Diputat("Maria Perez", "centre", "Texas");
-	private ArrayList<Diputat> diputats;
+	private String nom;
+	private TIdeologia ideologia;
+	private String procedencia;
 	
-	public ArrayList<Diputat> getDiputats() {
-		return diputats;
+	public StubDiputat() {
+		nom = "Joan Perez";
+		ideologia = TIdeologia.centre;
+		procedencia = "Los Angeles";
 	}
 	
-	public void afegirDiputats() {
-		diputats.add(d);
-		diputats.add(d2);
+	public String getNom() {
+		return nom;
+	}
+	
+	public String getIdeologia() {
+		return "centre";
+	}
+	
+	public String getProcedencia() {
+		return procedencia;
 	}
 }

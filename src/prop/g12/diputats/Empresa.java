@@ -7,11 +7,13 @@ public class Empresa {
 	private String nom;
 	private TAmbit ambit;
 	private ArrayList<Diputat> diputats;
-
-	public Empresa(String nom, String a) {
+	
+	public Empresa() {};
+	
+	/*public Empresa(String nom, String a) {
 		this.nom = nom;
 		this.ambit = stringToAmbit(a);
-	}
+	}*/
 	
 	public String getNom() {
 		return nom;
@@ -25,6 +27,12 @@ public class Empresa {
 		if (a.equals("industria"))return TAmbit.industria;				
 		else if (a.equals("comercial")) return TAmbit.comercial;
 		else return TAmbit.serveis;
+	}
+	
+	public String ambitToString(TAmbit a) {
+		if (a.equals(TAmbit.industria))return "industria";				
+		else if (a.equals(TAmbit.comercial)) return "comercial";
+		else return "serveis";
 	}
 	
 	public TAmbit getAmbit() {
