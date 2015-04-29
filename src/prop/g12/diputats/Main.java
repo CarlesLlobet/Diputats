@@ -22,8 +22,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.util.Rotation;
 
-//Provant si em funciona el push/pull desde eclipse
-
 public class Main {
 	
 	private static File file;

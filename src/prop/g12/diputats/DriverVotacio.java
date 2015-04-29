@@ -1,13 +1,17 @@
 package prop.g12.diputats;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DriverVotacio {
 
 	Votacio v;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public void TestVotacio() {
-		v.Votacio(11,"prova",12:10:10);
+		Date d = sdf.parse("21/12/2012");
+		v.Votacio(11,"prova",d);
 	}
 	
 	public void testgetCodi(){
@@ -30,8 +34,9 @@ public class DriverVotacio {
 		v.setDescripcio("prova2");
 	}
 	
-	public void testsetData() {
-		v.setData("23:00:00");
+	public void testsetData() throws ParseException {
+		Date d2 = sdf.parse("21/12/2012");
+		v.setData(d2);
 	}
 	
 	public void testafegirVot() {
