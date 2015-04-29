@@ -6,17 +6,23 @@ public class Vot {
 	private Votacio votacio;
 	
 	public Vot(String vot) {
-	    this.vot = getVot(vot);
+	    this.vot = stringToVot(vot);
 	}
 	    
-	public TVot getVot(String vot) {
-		if (vot.equals("favor"))return TVot.favor;				
-		else if (vot.equals("dreta")) return TVot.contra;
+	public TVot getVot() {
+		return vot;
+	}
+	
+	public TVot stringToVot(String a) {
+		if (a.equals("favor"))return TVot.favor;				
+		else if (a.equals("contra")) return TVot.contra;
 		else return TVot.abstencio;
 	}
 	
-	public void setVot(TVot vot_nou) {
-		this.vot = vot_nou;
+	public void setVot(String vot) {
+		if (vot.equals("favor"))this.vot = TVot.favor;				
+		else if (vot.equals("contra")) this.vot = TVot.contra;
+		else this.vot = TVot.abstencio;
 	}
 
 	public Diputat getDiputat() {
