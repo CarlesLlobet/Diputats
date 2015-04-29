@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Votacio extends Esdeveniment{
 	
-	private Map<Diputat,Vot> vots;
+	protected Map<Diputat,Vot> vots;
 
 	public Votacio(int codi, String descripcio, Date data) {
 		this.codi = codi;
