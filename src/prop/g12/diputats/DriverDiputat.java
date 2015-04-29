@@ -4,8 +4,6 @@ public class DriverDiputat {
 
 	Diputat d;
 	
-	public DriverDiputat() {}
-	
 	public void testConstructor() {
 		d = new Diputat("nomTestConstr", "ideologiaTestConstr", "procedenciaTestConstr");
 	}
