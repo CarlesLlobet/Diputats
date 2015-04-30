@@ -45,10 +45,8 @@ public class Main {
 	}
 	
 	public static void afegirDiputats() {
-		Map<Integer, Diputat> congres;
-		congres = new HashMap<Integer,Diputat>();
-		String N2 = input.nextLine();
-		Integer N = Integer.parseInt(N2);
+		Map<Integer, Diputat> congres = new HashMap<Integer, Diputat>();
+		Integer N = input.nextInt();
 		for (Integer i = 0; i < N; ++i) {
 			String nom = input.nextLine();
 			out.println("El seu nom es "+ nom);

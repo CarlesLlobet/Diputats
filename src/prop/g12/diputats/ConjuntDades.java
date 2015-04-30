@@ -1,16 +1,13 @@
 package prop.g12.diputats;
 
 import java.util.*;
+import prop.g12.common.Graf;
 
 public class ConjuntDades {
-	private ArrayList<Diputat> diputats;
 	private ArrayList<Empresa> empreses;
 	private ArrayList<Vot> vots;
 	private Map<Integer,Diputat> congres;
-	
-	public ArrayList<Diputat> getDiputats() {return diputats;}
-	
-	public void setDiputats(ArrayList<Diputat> diputats) {this.diputats = diputats;}
+	private Graf<Diputat> graf;
 
 	public ArrayList<Empresa> getEmpreses() {return empreses;}
 

@@ -1,6 +1,6 @@
 package prop.g12.common;
 
-public class Graf {
+public class Graf<T> {
 	Integer[][] adjacencia;
 	Integer numNodes;
 	Object[] nodes;
