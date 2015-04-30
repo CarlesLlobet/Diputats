@@ -12,9 +12,13 @@ public class NewmannGirvan {
 	static Integer[][] path;
 	static Integer col;
 	static int nSize;
+	static int threshold;
+	int maximActual;
+	boolean first;
 	
 	
 	public Integer[][] NewmanGirvainSOL(Integer[][] graf) {
+		first = true;
 		nSize = graf[0].length;
 		edges = new Integer[nSize][nSize];
 		Arrays.fill(edges,0);
@@ -29,11 +33,8 @@ public class NewmannGirvan {
 			}
 		}
 		removeEdge(); //Eliminada/es aresta/es més grans
-		/*Threshold*/
-		//Acabar
-		/*NOT Threshold*/
-		//Repetir
-		return grafSol;		
+		if (maximActual > threshold) NewmanGirvainSOL(grafSol); //Necesitem mes supresions
+		return grafSol; // Acabat!
 	}
 	
 
@@ -145,10 +146,25 @@ public class NewmannGirvan {
 				}
 			}
 		}
+		if (first) {
+			threshold = getTH();
+			first = false;
+		}
+		maximActual = max;
 		int n = vecF.length;
 		for (int i = 0; i < n; ++i) {
 			grafSol[vecF[i]][vecC[i]] = -1;
 		}
+	}
+	
+	private int getTH() {
+		int suma = 0;
+		for (int i = 0; i < nSize; ++i) {
+			for (int j = 0; j < nSize; ++j) {
+				suma = edges[i][j];
+			}
+		}
+		return suma/nSize;
 	}
 	
 }
