@@ -34,7 +34,24 @@ public class ConjuntDades {
         while(it.hasNext() && !find){
             Integer K = it.next();
             Diputat dip = congres.get(K);
-            if ((dip.getNom()).equals(nom)) {congres.remove(K); find = true;}
+            if ((dip.getNom()).equals(nom)) {
+            	congres.remove(K);
+            	find = true;
+            	ArrayList<Empresa> empr = dip.getEmpreses();
+            	Empresa e;
+            	for(int i = 0; i < empr.size(); i++) {
+            		e = empr.get(i);
+            		ArrayList<Diputat> dips = e.getDiputats();
+            		boolean find2 = false;
+            		for(int j = 0; j < dips.size() && !find2; j++) {
+            			if(dips.get(j).getNom().equals(nom)) {
+            				dips.remove(j);
+            				find2 = true;
+            			}
+            		}
+            	}
+            	
+            }
         }
         if (!find) {
         	System.out.print("No existeix el diputat amb nom"+ nom);

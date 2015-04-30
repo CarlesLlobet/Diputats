@@ -13,7 +13,7 @@ public class Diputat {
 	
 	public Diputat(String n, String i, String p) {
 		nom = n;
-		ideologia = getIdeologia(i);
+		ideologia = stringToIdeologia(i);
 		procedencia = p;
 	}
 	
@@ -22,9 +22,19 @@ public class Diputat {
 	}
 
 	public TIdeologia getIdeologia(String s) {
+		return ideologia;
+	}
+	
+	public TIdeologia stringToIdeologia(String s) {
 		if (s.equals("esquerra"))return TIdeologia.esquerra;				
 		else if (s.equals("dreta")) return TIdeologia.dreta;
 		else return TIdeologia.centre;
+	}
+	
+	public String ideologiaToString(TIdeologia a) {
+		if (a.equals(TIdeologia.esquerra))return "esquerra";				
+		else if (a.equals(TIdeologia.dreta)) return "dreta";
+		else return "centre";
 	}
 	
 	public String getProcedencia() {
@@ -45,6 +55,12 @@ public class Diputat {
 	public void setProcedencia(String p) {
 		procedencia = p;
 	}
+	
+	public ArrayList<Empresa> getEmpreses() { return empr;}
+	
+	public ArrayList<Esdeveniment> getEsdeveniments() { return esdv;}
+	
+	public ArrayList<Votacio> getVotacions() { return vot;}
 	
 	
 }
