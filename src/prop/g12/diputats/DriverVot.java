@@ -2,7 +2,6 @@ package prop.g12.diputats;
 
 import java.util.Scanner;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class DriverVot {
 	public static void main(String[] args) throws ParseException {
@@ -54,12 +53,29 @@ public class DriverVot {
 					if(correcte) System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
 					
 					break;
-				case 1:;
-				case 2:;
-				case 3:;
-				case -1:;
+				case 1:
+					System.out.println("El vot ha estat: " + vot.VotToString(vot.GetVot()));
+					break;
+				case 2:
+					System.out.println("El vot l'ha fet el diputat: " + vot.GetDiputat().getNom());
+					break;
+				case 3:
+					System.out.println("El vot ha sigut a la votacio amb codi: " + vot.GetVotacio().getCodi());
+					break;
+				case -1:
+					b = false;
+					break;
 				default: 
+					System.out.println("Opció incorrecte.\n");
+					System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
+							+ "Introdueix 1 per provar getVot\n "
+							+ "Introdueix 2 per provar getDiputat\n"
+							+ "Introdueix 3 per provar getVotacio\n"
+							+ "Introdueix -1 per a finalitzar l'execucio\n");
+					
+					break;
 			}
+			if (b) opt = sc.nextInt();
 		}
 		sc.close();
 	}

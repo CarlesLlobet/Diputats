@@ -19,14 +19,20 @@ public class Vot {
 	}
 	
 	public TVot StringToVot(String a) {
-		if (a.equals("favor"))return TVot.favor;				
-		else if (a.equals("contra")) return TVot.contra;
+		if (a.equals("favor") || vot.equals("a favor"))return TVot.favor;				
+		else if (a.equals("contra") || vot.equals("en contra")) return TVot.contra;
 		else return TVot.abstencio;
 	}
 	
+	public String VotToString(TVot tvot) {
+		if (tvot.equals(TVot.favor)) return "a favor";				
+		else if (tvot.equals(TVot.contra)) return "en contra";
+		else return "abstencio";
+	}
+	
 	public void SetVot(String vot) throws Exception {
-		if (vot.equals("favor"))this.vot = TVot.favor;				
-		else if (vot.equals("contra")) this.vot = TVot.contra;
+		if (vot.equals("favor") || vot.equals("a favor"))this.vot = TVot.favor;				
+		else if (vot.equals("contra") || vot.equals("en contra")) this.vot = TVot.contra;
 		else if (vot.equals("abstencio")) this.vot = TVot.abstencio;
 		else throw new Exception("No existeix el vot amb tipus "+ vot +"\n");	
 	}
