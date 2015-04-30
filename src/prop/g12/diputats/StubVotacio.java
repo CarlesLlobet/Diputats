@@ -6,9 +6,9 @@ import java.util.Date;
 
 public class StubVotacio {
 	
-	int codi;
-	String descripcio;
-	Date data;
+	private int codi;
+	private String descripcio;
+	private Date data;
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		public StubVotacio() throws ParseException {
