@@ -39,11 +39,11 @@ public class Empresa {
 		return ambit;
 	}	
 	
-	public void setAmbit(String a) {
+	public void setAmbit(String a) throws Exception {
 		if (a.equals("industria")) ambit = TAmbit.industria;
 		else if (a.equals("comercial")) ambit = TAmbit.comercial;
 		else if (a.equals("serveis")) ambit = TAmbit.serveis;
-		else System.out.print("No existeix el sector amb nom"+ a);	
+		else throw new Exception("No existeix el sector amb nom "+ a +"\n");	
 	}
 	
 	public void afegirDiputat(Diputat d) {
