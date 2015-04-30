@@ -5,91 +5,73 @@ import java.util.Scanner;
 
 public class DriverDiputat {
 
-	/*Diputat d;
-	
-	public void testConstructor() {
-		d = new Diputat("nomTestConstr", "ideologiaTestConstr", "procedenciaTestConstr");
-	}
-	
-	public void testGetNom() {
-		d.getNom();
-	}
-	
-	public void testGetIdeologia() {
-		d.getIdeologia();
-	}
-	
-	public void testGetProcedencia() {
-		d.getProcedencia();
-	}
-	
-	public void testSetNom() {
-		d.setNom("nomTest");
-	}
-	
-	public void testSetIdeologia() {
-		d.setIdeologia("ideologiaSetTest");
-	}
-	
-	public void testSetProcedencia() {
-		d.setIdeologia("procedenciaTest");
-	}
-
-}
-
-public class DriverDiputat {*/
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Introdueix 0 per provar el constructor de la classe Empresa\n"
+		System.out.println("Introdueix 0 per provar el constructor de la classe Diputat\n"
 				+ "Introdueix 1 per provar getNom\n "
-				+ "Introdueix 2 per provar getAmbit\n"
-				+ "Introdueix 3 per provar afegirDiputat\n"
-				+ "Introdueix 4 per provar getDiputats\n"
+				+ "Introdueix 2 per provar getIdeologia\n"
+				+ "Introdueix 3 per provar getProcedencia\n"
+				+ "Introdueix 4 per provar getEmpresa\n"
+				+ "Introdueix 5 per provar getEsdeveniments\n"
+				+ "Introdueix 6 per provar getVotacions\n"
 				+ "Introdueix -1 per a finalitzar l'execucio\n");
 		int opt = sc.nextInt();
 		sc.nextLine();
-		ArrayList<StubDiputat> d = new ArrayList<StubDiputat>();
-		Empresa e = new Empresa();
-		StubDiputat sd;
-		String nomEmpresa, ambitEmpresa;
+		ArrayList<StubEsdeveniment> esd = new ArrayList<StubEsdeveniment>();
+		ArrayList<StubVotacio> v = new ArrayList<StubVotacio>();
+		Diputat d = new Diputat();
+		StubEsdeveniment esdev;
+		StubVotacio vot;
+		String nomDiputat, ideologiaDiputat, procedenciaDiputat;
 		boolean b = true;
-		boolean correcte = true;
+		boolean correct = true;
 		while(b) {
 			switch(opt) {
 			case 0:
-				System.out.println("Introdueix un nom per l'empresa");
+				System.out.println("Introdueix un nom pel Diputat");
 				while(!sc.hasNext());
-				nomEmpresa = sc.nextLine();
-				e.setNom(nomEmpresa);
-				System.out.println("Introdueix un ambit per l'empresa");
+				nomDiputat = sc.nextLine();
+				d.setNom(nomDiputat);
+				System.out.println("Introdueix la procedencia del Diputat");
 				while(!sc.hasNext());
-				ambitEmpresa = sc.nextLine();
-				try { e.setAmbit(ambitEmpresa); }
+				procedenciaDiputat = sc.nextLine();
+				d.setProcedencia(procedenciaDiputat);
+				System.out.println("Introdueix la ideologia del Diputat");
+				while(!sc.hasNext());
+				ideologiaDiputat = sc.nextLine();
+				try { d.setIdeologia(ideologiaDiputat); }
 				catch (Exception ex) { 
-					correcte = false;
+					correct = false;
 					ex.printStackTrace(); }
-				if(correcte) System.out.println("Empresa creada\n");
+				if(correct) System.out.println("Diputat creat");
 				break;
 			case 1:
-				System.out.println("El nom de l'empresa es: " + e.getNom());
+				System.out.println("El nom del diputat es: " + d.getNom());
 				break;
 			case 2:
-				System.out.println("L'ambit de l'empresa es: " + e.getAmbit());
+				System.out.println("La ideologia del diputat es: " + d.getIdeologia());
 				break;
 			case 3:
-				sd = new StubDiputat();
-				System.out.println("Creat el diputat " + sd.getNom() + " amb ideologia " + sd.getIdeologia() + " i procedencia " + sd.getProcedencia());
-				d.add(sd);
-				System.out.println("Diputat afegit a la llista\n");
+				System.out.println("La procedencia del diputat es: " + d.getProcedencia());
 				break;
 			case 4:
-				System.out.println("La mida de la llista es " + d.size());
+				System.out.println("El nom de l'empresa en la qual treballa el diputat es: " + d.getEmpresa().getNom() + " amb ambit " + d.getEmpresa().getAmbit());
+			case 5:
+				System.out.println("La mida de la llista d'Esdeveniments es " + esd.size());
 				System.out.println("El contingut de la llista es:");
-				while(d.size() != 0) {
-					sd = d.get(d.size()-1);
-					System.out.println(sd.getNom() +" " + sd.getIdeologia() + " " + sd.getProcedencia());
-					d.remove(d.size()-1);
+				while(esd.size() != 0) {
+					esdev = esd.get(esd.size()-1);
+					System.out.println("Codi: " + esdev.getCodi() + ", Descripcio: " + esdev.getDescripcio() + " i Data: " + esdev.getData());
+					esd.remove(esd.size()-1);
+				}
+				break;
+			case 6:
+				System.out.println("La mida de la llista de Votacio es " + v.size());
+				System.out.println("El contingut de la llista es:");
+				while(v.size() != 0) {
+					vot = v.get(v.size()-1);
+					System.out.println("Codi: " + vot.getCodi() + ", Descripcio: " + vot.getDescripcio() + " i Data: " + vot.getData());
+					v.remove(v.size()-1);
 				}
 				break;
 			case -1:
