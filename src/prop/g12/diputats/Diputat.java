@@ -7,7 +7,7 @@ public class Diputat {
 	private ArrayList<Esdeveniment> esdv;
 	private ArrayList<Votacio> vot;
 	private String nom;
-	Empresa empr;
+	private Empresa empr;
 	private TIdeologia ideologia;
 	private String procedencia;	
 	
