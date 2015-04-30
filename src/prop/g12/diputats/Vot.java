@@ -7,6 +7,12 @@ public class Vot {
 	
 	public Vot() {
 	}
+	
+	public Vot(TVot v, Diputat d, Votacio vota){
+		this.vot = v;
+		this.diputat = d;
+		this.votacio = vota;
+	}
 	    
 	public TVot GetVot() {
 		return vot;

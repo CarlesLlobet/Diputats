@@ -11,6 +11,8 @@ public class Diputat {
 	private TIdeologia ideologia;
 	private String procedencia;	
 	
+	public Diputat() {}
+	
 	public Diputat(String n, String i, String p) {
 		nom = n;
 		ideologia = stringToIdeologia(i);

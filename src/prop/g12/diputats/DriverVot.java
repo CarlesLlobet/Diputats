@@ -17,7 +17,7 @@ public class DriverVot {
 		sc.nextLine();
 	
 		Vot vot = new Vot();
-		String tipusVot,nomDiputat, codiVotacio;
+		String tipusVot;
 		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 	
 		boolean b = true;
@@ -30,15 +30,15 @@ public class DriverVot {
 					tipusVot = sc.nextLine();
 					vot.SetVot(tipusVot);
 					
-					System.out.println("Introdueix el nom del Diputat que ho vota:");
-					while(!sc.hasNext());
-					nomDiputat = sc.nextLine();
+					StubDiputat s = new StubDiputat();
 					
-					//Buscar diputat i assignarlo al vot
+					Diputat d = new Diputat();
+					d.setNom(s.getNom());
+					d.setIdeologia(s.getIdeologia());
+					d.setProcedencia(s.getProcedencia());
 					
-					System.out.println("Introdueix el codi de la Votacio on es vota:");
-					while(!sc.hasNext());
-					codiVotacio = sc.nextLine();
+					System.out.println("Creat el diputat " + s.getNom() + " amb ideologia " + s.getIdeologia() + " i procedencia " + s.getProcedencia());
+		
 					
 					//Buscar votacio i assignarla al vot
 				case 1:;
