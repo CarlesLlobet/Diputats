@@ -12,8 +12,10 @@ public class DriverVotacio {
     public static void main(String[] args) {     
         Scanner sc = new Scanner(System.in);    
         System.out.print("Introdueix 0 per provar el constructor de la classe Votacio\n"
-				+ "Introdueix 1 per provar getCodi\n Introdueix 2 per provar getDescripcio\n"
-				+ "Introdueix 3 per provar getData\n Introdueix 4 per afegir un Vot\n "
+				+ "Introdueix 1 per provar getCodi\n"
+				+ "Introdueix 2 per provar getDescripcio\n"
+				+ "Introdueix 3 per provar getData\n"
+				+ "Introdueix 4 per afegir un Vot\n"
 				+ "Introdueix -1 per a finalitzar l'execucio\n");    
         int opt = sc.nextInt();
         Votacio v;
@@ -27,28 +29,28 @@ public class DriverVotacio {
         while(acabado){
             switch(opt){
                 case 0:
-                    System.out.print("Introdueix el codi de la votacio\n");
+                    System.out.println("Introdueix el codi de la votacio");
                     while(!sc.hasNext());
                     codi = sc.nextInt();
                     v.setCodi(codi);
-                    System.out.print("Introdueix la descripcio de la votacio");
+                    System.out.println("Introdueix la descripcio de la votacio");
                     while(!sc.hasNext());
                     desc = sc.nextLine();
                     v.setDescripcio(desc);
-                    System.out.print("Introdueix el codi de la votacio\n");
+                    System.out.println("Introdueix la data de la votacio");
                     while(!sc.hasNext());
                     data = sc.nextLine();
-                    
-                    System.out.print("Votacio creada\n");
+                    //v.setData(data); dataToString
+                    System.out.println("Votacio creada");
                     break;
                 case 1:
                 	System.out.println("El codi de la votacio es: " + v.getCodi());
     				break;
                 case 2:
-                    System.out.print("La descripio de la votacio es: " + v.getDescripcio()+"\n");
+                    System.out.println("La descripio de la votacio es: " + v.getDescripcio());
                     break;              
                 case 3:
-                    System.out.print("La data de la votacio es: " + v.getData() + "\n");
+                    System.out.println("La data de la votacio es: " + v.getData());
                     break;              
                 case 4:
                 	sd = new StubDiputat();
@@ -64,6 +66,7 @@ public class DriverVotacio {
 
             }
             if(acabado) opt = sc.nextInt();
-        }    
+        }
+        sc.close();
     }
 }
