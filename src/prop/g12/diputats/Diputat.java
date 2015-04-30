@@ -5,9 +5,9 @@ import java.util.*;
 public class Diputat {
 
 	private ArrayList<Esdeveniment> esdv;
-	private ArrayList<Empresa> empr;
 	private ArrayList<Votacio> vot;
 	private String nom;
+	Empresa empr;
 	private TIdeologia ideologia;
 	private String procedencia;	
 	

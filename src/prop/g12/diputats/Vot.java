@@ -5,8 +5,7 @@ public class Vot {
 	private Diputat diputat;
 	private Votacio votacio;
 	
-	public Vot(String vot) {
-	    this.vot = StringToVot(vot);
+	public Vot() {
 	}
 	    
 	public TVot GetVot() {
