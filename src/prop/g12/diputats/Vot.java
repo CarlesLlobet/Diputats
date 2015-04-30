@@ -24,10 +24,11 @@ public class Vot {
 		else return TVot.abstencio;
 	}
 	
-	public void SetVot(String vot) {
+	public void SetVot(String vot) throws Exception {
 		if (vot.equals("favor"))this.vot = TVot.favor;				
 		else if (vot.equals("contra")) this.vot = TVot.contra;
-		else this.vot = TVot.abstencio;
+		else if (vot.equals("abstencio")) this.vot = TVot.abstencio;
+		else throw new Exception("No existeix el vot amb tipus "+ vot +"\n");	
 	}
 
 	public Diputat GetDiputat() {

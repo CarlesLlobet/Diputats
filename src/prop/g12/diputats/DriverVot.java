@@ -1,12 +1,11 @@
 package prop.g12.diputats;
 
-import java.util.Date;
 import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class DriverVot {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
 			+ "Introdueix 1 per provar getVot\n "
@@ -18,7 +17,6 @@ public class DriverVot {
 	
 		Vot vot = new Vot();
 		String tipusVot;
-		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 	
 		boolean b = true;
 		boolean correcte = true;
@@ -28,7 +26,12 @@ public class DriverVot {
 					System.out.println("Introdueix el tipus de vot (favor/contra/abstencio):");
 					while(!sc.hasNext());
 					tipusVot = sc.nextLine();
-					vot.SetVot(tipusVot);
+					try {vot.SetVot(tipusVot);}
+					catch (Exception ex) { 
+						correcte = false;
+						ex.printStackTrace(); 
+					}
+					
 					
 					StubDiputat sd = new StubDiputat();
 					
@@ -39,16 +42,18 @@ public class DriverVot {
 					
 					vot.SetDiputat(d);
 					
-					StubVotacio sv = new StubDiputat();
+					StubVotacio sv = new StubVotacio();
 					
 					Votacio v = new Votacio();
-					v.setIdeologia(sv.getCodi());
-					v.setProcedencia(sv.getDescripcio());
-					v.setData(sv.getData);
+					v.setCodi(sv.getCodi());
+					v.setDescripcio(sv.getDescripcio());
+					v.setData(sv.getData());
 					
 					vot.SetVotacio(v);
 					
-					System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
+					if(correcte) System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
+					
+					break;
 				case 1:;
 				case 2:;
 				case 3:;
@@ -56,6 +61,7 @@ public class DriverVot {
 				default: 
 			}
 		}
+		sc.close();
 	}
 }
 /*		
