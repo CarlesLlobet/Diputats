@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -27,6 +28,7 @@ public class Main {
 	private static File file;
 	private static PrintWriter out;
 	private static Scanner input;
+	private ConjuntDades cd;
 	
 	public static void io() {
 		file = new File("Diputats.txt");
@@ -44,10 +46,10 @@ public class Main {
 		}
 	}
 	
-	public static void afegirDiputats() {
-		Map<Integer, Diputat> congres = new HashMap<Integer, Diputat>();
-		Integer N = input.nextInt();
-		for (Integer i = 0; i < N; ++i) {
+	public void afegirDiputats() {
+		ArrayList<Diputat> congres = new ArrayList<Diputat>();
+		int N = input.nextInt();
+		for (int i = 0; i < N; ++i) {
 			String nom = input.nextLine();
 			out.println("El seu nom es "+ nom);
 			String idea = input.nextLine();
@@ -55,9 +57,9 @@ public class Main {
 			String procedencia = input.nextLine();
 			out.println("La seva procedencia es "+ procedencia);
 			Diputat dip = new Diputat(nom, idea, procedencia);
-			congres.put(i, dip);
+			congres.add(i, dip);
 		}
-		ConjuntDades.getInstance().setCongres(congres);
+		cd.setCongres(congres);
 	}
 	
 	public static class Ventana3D extends JFrame{
@@ -136,7 +138,7 @@ public class Main {
 	}
 	
 	
-	public static void main(String[] args) throws IOException {
+	public void main(String[] args) throws IOException {
 		io();
 		afegirDiputats();
 		//afegirEmpreses();

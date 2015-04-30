@@ -5,6 +5,7 @@ import java.util.*;
 public class Diputat {
 
 	private ArrayList<Esdeveniment> esdv;
+	//private Set<Esdeveniment> esdv;
 	private ArrayList<Votacio> vot;
 	private Empresa empr;
 	private String nom;
@@ -23,7 +24,7 @@ public class Diputat {
 		return nom;
 	}
 
-	public TIdeologia getIdeologia(String s) {
+	public TIdeologia getIdeologia() {
 		return ideologia;
 	}
 	
@@ -61,6 +62,8 @@ public class Diputat {
 	public Empresa getEmpresa() { return empr;}
 	
 	public ArrayList<Esdeveniment> getEsdeveniments() { return esdv;}
+	
+	//public Set<Esdeveniment> getEsdeveniments() {return esdv;}
 	
 	public ArrayList<Votacio> getVotacions() { return vot;}
 	

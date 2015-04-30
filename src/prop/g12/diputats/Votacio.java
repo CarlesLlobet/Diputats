@@ -14,6 +14,12 @@ public class Votacio extends Esdeveniment{
 		this.data = data;
 	}
 	
+	public Votacio (Esdeveniment e) {
+		this.codi = e.codi;
+		this.descripcio = e.descripcio;
+		this.data = e.data;
+	}
+	
 	public int getCodi(){
 		return super.getCodi();
 	}
