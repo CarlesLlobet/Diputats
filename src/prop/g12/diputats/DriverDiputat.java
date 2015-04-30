@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DriverDiputat {
 
-	Diputat d;
+	/*Diputat d;
 	
 	public void testConstructor() {
 		d = new Diputat("nomTestConstr", "ideologiaTestConstr", "procedenciaTestConstr");
@@ -16,7 +16,7 @@ public class DriverDiputat {
 	}
 	
 	public void testGetIdeologia() {
-		d.getIdeologia("ideologiaGetTest");
+		d.getIdeologia();
 	}
 	
 	public void testGetProcedencia() {
@@ -37,7 +37,7 @@ public class DriverDiputat {
 
 }
 
-public class DriverDiputat {
+public class DriverDiputat {*/
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

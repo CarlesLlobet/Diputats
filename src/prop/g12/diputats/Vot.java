@@ -41,7 +41,7 @@ public class Vot {
 		return diputat;
 	}
 
-	public void getDiputat(Diputat diputat) {
+	public void setDiputat(Diputat diputat) {
 		this.diputat = diputat;
 	}
 

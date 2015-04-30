@@ -25,7 +25,7 @@ public class DriverVot {
 					System.out.println("Introdueix el tipus de vot (favor/contra/abstencio):");
 					while(!sc.hasNext());
 					tipusVot = sc.nextLine();
-					try {vot.SetVot(tipusVot);}
+					try {vot.setVot(tipusVot);}
 					catch (Exception ex) { 
 						correcte = false;
 						ex.printStackTrace(); 
@@ -39,7 +39,7 @@ public class DriverVot {
 					d.setIdeologia(sd.getIdeologia());
 					d.setProcedencia(sd.getProcedencia());
 					
-					vot.SetDiputat(d);
+					vot.setDiputat(d);
 					
 					StubVotacio sv = new StubVotacio();
 					
@@ -48,19 +48,19 @@ public class DriverVot {
 					v.setDescripcio(sv.getDescripcio());
 					v.setData(sv.getData());
 					
-					vot.SetVotacio(v);
+					vot.setVotacio(v);
 					
 					if(correcte) System.out.println("Creat el vot amb tipus " + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
 					
 					break;
 				case 1:
-					System.out.println("El vot ha estat: " + vot.VotToString(vot.GetVot()));
+					System.out.println("El vot ha estat: " + vot.votToString(vot.getVot()));
 					break;
 				case 2:
-					System.out.println("El vot l'ha fet el diputat: " + vot.GetDiputat().getNom());
+					System.out.println("El vot l'ha fet el diputat: " + vot.getDiputat().getNom());
 					break;
 				case 3:
-					System.out.println("El vot ha sigut a la votacio amb codi: " + vot.GetVotacio().getCodi());
+					System.out.println("El vot ha sigut a la votacio amb codi: " + vot.getVotacio().getCodi());
 					break;
 				case -1:
 					b = false;
@@ -80,42 +80,3 @@ public class DriverVot {
 		sc.close();
 	}
 }
-/*		
-		
-	public void testVot() {
-		votacio = new Vot("favor");
-	}
-		    
-	public void testGetVot() {
-		votacio.GetVot();
-	}
-		
-	public void testStringToVot() {
-		votacio.StringToVot("prova");
-	}
-		
-	public void testSetVot() {
-		votacio.SetVot("abstenció");
-	}
-
-	public void testGetDiputat() {
-		votacio.GetDiputat();
-	}
-
-	public void testSetDiputat() {
-		Diputat dip;
-		dip = new Diputat("nom","ideologia","procedencia");
-		votacio.SetDiputat(dip);
-	}
-
-	public void testGetVotacio() {
-		votacio.GetVot();
-	}
-
-	public void testSetVotacio() throws ParseException {
-		Votacio votacio2;
-		Date d2 = sdf2.parse("21/12/2012");
-		votacio2 = new Votacio(3,"Votació contra els politics", d2);
-		votacio.SetVotacio(votacio2);
-	}
-}*/
