@@ -8,7 +8,7 @@ public class DriverEmpresa {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introdueix 0 per provar el constructor de la classe Empresa\n"
-				+ "Introdueix 1 per provar getNom\n "
+				+ "Introdueix 1 per provar getNom\n"
 				+ "Introdueix 2 per provar getAmbit\n"
 				+ "Introdueix 3 per provar afegirDiputat\n"
 				+ "Introdueix 4 per provar getDiputats\n"
@@ -60,6 +60,16 @@ public class DriverEmpresa {
 				break;
 			case -1:
 				b = false;
+				break;
+				
+			default:
+				System.out.println("Opcio incorrecta");
+				System.out.println("Introdueix 0 per provar el constructor de la classe Empresa\n"
+						+ "Introdueix 1 per provar getNom\n"
+						+ "Introdueix 2 per provar getAmbit\n"
+						+ "Introdueix 3 per provar afegirDiputat\n"
+						+ "Introdueix 4 per provar getDiputats\n"
+						+ "Introdueix -1 per a finalitzar l'execucio\n");
 				break;
 			}
 			if (b) opt = sc.nextInt();
