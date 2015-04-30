@@ -6,27 +6,51 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class DriverVot {
-	Scanner sc = new Scanner(System.in);
-	System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
 			+ "Introdueix 1 per provar getVot\n "
 			+ "Introdueix 2 per provar getDiputat\n"
 			+ "Introdueix 3 per provar getVotacio\n"
 			+ "Introdueix -1 per a finalitzar l'execucio\n");
-	int opt = sc.nextInt();
-	sc.nextLine();
+		int opt = sc.nextInt();
+		sc.nextLine();
 	
-	Vot vot;
-	SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+		Vot vot = new Vot();
+		String tipusVot,nomDiputat, codiVotacio;
+		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 	
-	boolean b = true;
-	boolean correcte = true;
-	while(b) {
-		switch(opt) {
-		case 0: 
-			System.out.println("Introdueix el tipus de vot (favor/contra/abstencio)");
+		boolean b = true;
+		boolean correcte = true;
+		while(b) {
+			switch(opt) {
+				case 0: 
+					System.out.println("Introdueix el tipus de vot (favor/contra/abstencio):");
+					while(!sc.hasNext());
+					tipusVot = sc.nextLine();
+					vot.SetVot(tipusVot);
+					
+					System.out.println("Introdueix el nom del Diputat que ho vota:");
+					while(!sc.hasNext());
+					nomDiputat = sc.nextLine();
+					
+					//Buscar diputat i assignarlo al vot
+					
+					System.out.println("Introdueix el codi de la Votacio on es vota:");
+					while(!sc.hasNext());
+					codiVotacio = sc.nextLine();
+					
+					//Buscar votacio i assignarla al vot
+				case 1:;
+				case 2:;
+				case 3:;
+				case -1:;
+				default: 
+			}
 		}
-		
-		
+	}
+}
+/*		
 		
 	public void testVot() {
 		votacio = new Vot("favor");
@@ -64,4 +88,4 @@ public class DriverVot {
 		votacio2 = new Votacio(3,"Votació contra els politics", d2);
 		votacio.SetVotacio(votacio2);
 	}
-}
+}*/

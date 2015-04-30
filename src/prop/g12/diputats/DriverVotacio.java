@@ -41,7 +41,7 @@ public class DriverVotacio {
 	
 	public void testafegirVot() {
 		Diputat d = new Diputat("SrProva","centre","LA");
-		Vot vot = new Vot("favor");
+		Vot vot = new Vot();
 		v.afegirVot(vot, d);
 	}
 	
