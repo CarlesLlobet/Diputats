@@ -25,7 +25,7 @@ public class Votacio extends Esdeveniment{
 	public Date getData() {
 		return super.getData();
 	}
-	
+
 	public void setCodi(int codi) {
 		super.setCodi(codi);
 	}
@@ -40,6 +40,10 @@ public class Votacio extends Esdeveniment{
 	
 	public void afegirVot(Vot v, Diputat d) {
 		vots.put(d, v);
+	}
+	
+	public Map<Diputat,Vot> getVots() {
+		return vots;
 	}
 	
 }
