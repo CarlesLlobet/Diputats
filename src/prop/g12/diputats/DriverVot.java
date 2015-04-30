@@ -50,7 +50,7 @@ public class DriverVot {
 					
 					vot.SetVotacio(v);
 					
-					if(correcte) System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
+					if(correcte) System.out.println("Creat el vot amb tipus " + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
 					
 					break;
 				case 1:
@@ -66,7 +66,7 @@ public class DriverVot {
 					b = false;
 					break;
 				default: 
-					System.out.println("Opció incorrecte.\n");
+					System.out.println("\n Opció incorrecte.");
 					System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
 							+ "Introdueix 1 per provar getVot\n "
 							+ "Introdueix 2 per provar getDiputat\n"
