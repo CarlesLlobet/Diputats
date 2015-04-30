@@ -56,7 +56,7 @@ public class Diputat {
 		procedencia = p;
 	}
 	
-	public ArrayList<Empresa> getEmpreses() { return empr;}
+	public Empresa getEmpresa() { return empr;}
 	
 	public ArrayList<Esdeveniment> getEsdeveniments() { return esdv;}
 	
