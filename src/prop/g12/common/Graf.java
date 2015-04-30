@@ -1,20 +1,22 @@
 package prop.g12.common;
 
+import java.util.ArrayList;
+
 public class Graf<T> {
 	Integer[][] adjacencia;
 	Integer numNodes;
-	Object[] nodes;
+	ArrayList<T> nodes;
 	int c;
 	
 	public void crearGraf(int n) {
 		numNodes = n;
 		adjacencia = new Integer[numNodes][numNodes];
-		nodes = new Object[numNodes];
+		nodes = new ArrayList<T>(numNodes);
 		c = 0;
 	}
 	
-	public void afegirNode(Object node) {
-		nodes[c] = node;
+	public void afegirNode(T node) {
+		nodes.add(c, node);
 		++c;
 	}
 	
@@ -29,11 +31,11 @@ public class Graf<T> {
 		return numNodes; 
 	}
 	
-	public Object getNode(Integer idNode) {
-		return nodes[idNode];
+	public T getNode(Integer idNode) {
+		return nodes.get(idNode);
 	}
 	
-	public Object[] getNodes() {
+	public ArrayList<T> getNodes() {
 		return nodes;
 	}
 	
