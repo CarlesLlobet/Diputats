@@ -30,22 +30,25 @@ public class DriverVot {
 					tipusVot = sc.nextLine();
 					vot.SetVot(tipusVot);
 					
-					StubDiputat s = new StubDiputat();
+					StubDiputat sd = new StubDiputat();
 					
 					Diputat d = new Diputat();
-					d.setNom(s.getNom());
-					d.setIdeologia(s.getIdeologia());
-					d.setProcedencia(s.getProcedencia());
+					d.setNom(sd.getNom());
+					d.setIdeologia(sd.getIdeologia());
+					d.setProcedencia(sd.getProcedencia());
 					
 					vot.SetDiputat(d);
 					
+					StubVotacio sv = new StubDiputat();
+					
 					Votacio v = new Votacio();
+					v.setIdeologia(sv.getCodi());
+					v.setProcedencia(sv.getDescripcio());
+					v.setData(sv.getData);
 					
+					vot.SetVotacio(v);
 					
-					System.out.println("Creat el diputat " + s.getNom() + " amb ideologia " + s.getIdeologia() + " i procedencia " + s.getProcedencia());
-		
-					
-					//Buscar votacio i assignarla al vot
+					System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
 				case 1:;
 				case 2:;
 				case 3:;
