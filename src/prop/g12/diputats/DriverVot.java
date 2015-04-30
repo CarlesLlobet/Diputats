@@ -37,6 +37,11 @@ public class DriverVot {
 					d.setIdeologia(s.getIdeologia());
 					d.setProcedencia(s.getProcedencia());
 					
+					vot.SetDiputat(d);
+					
+					Votacio v = new Votacio();
+					
+					
 					System.out.println("Creat el diputat " + s.getNom() + " amb ideologia " + s.getIdeologia() + " i procedencia " + s.getProcedencia());
 		
 					

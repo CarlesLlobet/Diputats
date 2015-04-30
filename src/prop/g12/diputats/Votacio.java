@@ -5,6 +5,8 @@ import java.util.*;
 public class Votacio extends Esdeveniment{
 	
 	protected Map<Diputat,Vot> vots;
+	
+	public Votacio(){}
 
 	public Votacio(int codi, String descripcio, Date data) {
 		this.codi = codi;
