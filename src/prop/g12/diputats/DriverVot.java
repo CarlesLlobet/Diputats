@@ -1,12 +1,11 @@
 package prop.g12.diputats;
 
-import java.util.Date;
 import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class DriverVot {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
 			+ "Introdueix 1 per provar getVot\n "
@@ -18,7 +17,6 @@ public class DriverVot {
 	
 		Vot vot = new Vot();
 		String tipusVot;
-		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 	
 		boolean b = true;
 		boolean correcte = true;
@@ -28,24 +26,34 @@ public class DriverVot {
 					System.out.println("Introdueix el tipus de vot (favor/contra/abstencio):");
 					while(!sc.hasNext());
 					tipusVot = sc.nextLine();
-					vot.SetVot(tipusVot);
+					try {vot.SetVot(tipusVot);}
+					catch (Exception ex) { 
+						correcte = false;
+						ex.printStackTrace(); 
+					}
 					
-					StubDiputat s = new StubDiputat();
+					
+					StubDiputat sd = new StubDiputat();
 					
 					Diputat d = new Diputat();
-					d.setNom(s.getNom());
-					d.setIdeologia(s.getIdeologia());
-					d.setProcedencia(s.getProcedencia());
+					d.setNom(sd.getNom());
+					d.setIdeologia(sd.getIdeologia());
+					d.setProcedencia(sd.getProcedencia());
 					
 					vot.SetDiputat(d);
 					
+					StubVotacio sv = new StubVotacio();
+					
 					Votacio v = new Votacio();
+					v.setCodi(sv.getCodi());
+					v.setDescripcio(sv.getDescripcio());
+					v.setData(sv.getData());
 					
+					vot.SetVotacio(v);
 					
-					System.out.println("Creat el diputat " + s.getNom() + " amb ideologia " + s.getIdeologia() + " i procedencia " + s.getProcedencia());
-		
+					if(correcte) System.out.println("Creat el vot amb tipus" + tipusVot + " del Diputat " + sd.getNom() + " a la Votació  " + sv.getCodi());
 					
-					//Buscar votacio i assignarla al vot
+					break;
 				case 1:;
 				case 2:;
 				case 3:;
@@ -53,6 +61,7 @@ public class DriverVot {
 				default: 
 			}
 		}
+		sc.close();
 	}
 }
 /*		
