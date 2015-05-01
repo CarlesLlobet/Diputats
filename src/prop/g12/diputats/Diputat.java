@@ -146,15 +146,4 @@ public class Diputat {
 	public void setEmpresa(Empresa empr) { 
 		this.empr = empr;
 	}
-	
-	/**
-	 * Retorna la llista d'Esdeveniments on participa el Diputat
-	 */
-	public ArrayList<Esdeveniment> setEsdeveniments() { return esdv;}
-	
-	/**
-	 * Retorna la llista de Votacions on participa el Diputat
-	 */
-	public ArrayList<Votacio> setVotacions() { return vot;}
-	
 }

@@ -1,6 +1,8 @@
 package prop.g12.diputats;
 import java.util.Date;
 
+/*AQUESTA CLASSE NO ES DE DOMINI, ES DE PRESENTACIO*/
+
 public class Estadistiques {
 
 	String nom;
