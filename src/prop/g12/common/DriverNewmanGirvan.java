@@ -6,9 +6,11 @@ import prop.g12.diputats.StubDiputat;
 
 public class DriverNewmanGirvan {
 
+	private static final Exception Exception = null;
+
 	public DriverNewmanGirvan() {}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws java.lang.Exception {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introdueix 0 per consultar el graf a provar i seleccio de vertex per calcular la resta de opcions\n"
 				+ "Introdueix 1 per provar la cerca de camins a un graf entre dos vertex\n"
@@ -21,13 +23,13 @@ public class DriverNewmanGirvan {
 		sc.nextLine();
 		NewmannGirvan ng = new NewmannGirvan();
 		StubGraf sg = new StubGraf();
-		Integer[][] graf = sg.GetGraf();
+		Double[][] graf = sg.GetGraf();
 		int n = graf[0].length;
 		boolean b = true;
 		int iNode = 0, jNode = 1;
 		Integer[][] sol = null;
 		Integer[][] bet = null;
-		Integer[][] sup = null;
+		Double[][] sup = null;
 		Integer max = 0;
 		while(b) {
 			switch(opt) {
@@ -46,6 +48,7 @@ public class DriverNewmanGirvan {
 				System.out.println("Introdueix node final:");
 				while(!sc.hasNext());
 				jNode = sc.nextInt();
+				if (iNode == jNode) throw new Exception("No es poden seleccionar el mateix node inicial i final"); 
 				break;
 			case 1:
 				System.out.println("Introdueix el node inici i node final, no poden ser el mateix, els valors van entre [0,4]:");

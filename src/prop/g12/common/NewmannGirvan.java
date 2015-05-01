@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class NewmannGirvan {
 	
-	Integer[][] grafSol;
+	Double[][] grafSol;
 	static Integer[][] edges;
 	static Integer[][] caminos;
 	static Integer[][] path;
@@ -26,7 +26,7 @@ public class NewmannGirvan {
 	 * @param graf: Matriu d'adjacencies inicial
 	 * @return Retorna una matriu d'Integers amb l'algorisme NewmanGirvain aplicat
 	 */
-	public Integer[][] NewmanGirvainSOL(Integer[][] graf) {
+	public Double[][] NewmanGirvainSOL(Double[][] graf) {
 		first = true;
 		nSize = graf[0].length;
 		edges = new Integer[nSize][nSize];
@@ -53,15 +53,15 @@ public class NewmannGirvan {
 	 * @param j: node final on l'algorisme acaba
 	 * @return Retorna una matriu amb les arestes dels camins curts entre els nodes i-j
 	 */
-	static Integer[][] SearchAlg (Integer[][]mat, Integer i, Integer j) {
+	static Integer[][] SearchAlg (Double[][]mat, Integer i, Integer j) {
 		LinkedList<Integer> lista = new LinkedList<Integer>();
 		Integer nodeAct, nextNode;
 		caminos = null;
 		Integer[][] padre = new Integer[nSize][];
 		
 		/* Vector de distancias */
-	  	Integer[] distancia = new Integer[nSize];
-	  	Arrays.fill(distancia, -1);
+	  	Double[] distancia = new Double[nSize];
+	  	Arrays.fill(distancia, -1.0);
 		
 		/* Vector de vistats */
 	  	Boolean[] visitado = new Boolean[nSize];
@@ -70,7 +70,7 @@ public class NewmannGirvan {
 	  	/* preparamos el nodo inicial */
 	  	lista.add(i);
 	  	visitado[i]=true;
-	  	distancia[i]=0;
+	  	distancia[i]=0.0;
 	  	/* */
 	  	while (!lista.isEmpty()) {
 	  		nodeAct = lista.pollFirst();
@@ -110,11 +110,11 @@ public class NewmannGirvan {
 	 * @param n: node on trobar les adjacencies
 	 * @return Retorna un vector d'identificadors dels nodes adjacents a n
 	 */
-	private static Integer[] adjMat(Integer[][] m, Integer n) {
+	private static Integer[] adjMat(Double[][] m, Integer n) {
 		Integer[] ret = null;
 		int i = 0;
 		for (int j = 0; j < nSize; ++j) {
-			if (m[n][j] >= 0) {
+			if (m[n][j] >= 0.0) {
 				ret[i]=j;
 				++i;
 			}
@@ -162,7 +162,7 @@ public class NewmannGirvan {
 	 * @param ed: Matriu d'Integers on estan tots els valors dels betweeness de les arestes
 	 * @return Retorna una matriu amb la eliminacio de l'aresta amb més betweeness
 	 */
-	Integer[][] removeEdge(Integer[][] ed) {
+	Double[][] removeEdge(Integer[][] ed) {
 		Integer max = 0;
 		Integer[] vecF = null;
 		Integer[] vecC = null;
@@ -187,7 +187,7 @@ public class NewmannGirvan {
 		maximActual = max;
 		int n = vecF.length;
 		for (int i = 0; i < n; ++i) {
-			grafSol[vecF[i]][vecC[i]] = -1;
+			grafSol[vecF[i]][vecC[i]] = -1.0;
 		}
 		return grafSol;
 	}

@@ -1,6 +1,5 @@
 package prop.g12.diputats;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -32,7 +31,7 @@ public class Votacio extends Esdeveniment{
 	 * Codi, descripcio i data de Votacio agafada de la superclase Esdeveniment
 	 * @param e: Esdeveniment relacionat amb votacio
 	 */
-	public Votacio (Esdeveniment e) {
+	public Votacio(Esdeveniment e) {
 		this.codi = e.codi;
 		this.descripcio = e.descripcio;
 		this.data = e.data;
@@ -87,8 +86,13 @@ public class Votacio extends Esdeveniment{
 	/**
 	 * Afegeix un Vot v al Diputat d
 	 * @param Vot v: Vot efectuat per un Diputat d, Diputat d: Diputat que efectua el Vot v
+	 * @throws Exception 
 	 */
-	public void afegirVot(Vot v, Diputat d) {
+	public void afegirVot(Vot v, Diputat d) throws Exception {
+		if (v.equals(TVot.contra) && v.equals(TVot.favor) && v.equals(TVot.abstencio)) {
+			throw new Exception("El Vot no es correcta. Nomes pot ser contra, favor o abstencio");
+		}
+		// Comprobar diputat
 		vots.put(d, v);
 	}
 	
