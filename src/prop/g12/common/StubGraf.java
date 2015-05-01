@@ -40,5 +40,9 @@ public class StubGraf<T> {
 	public Integer GetAresta(int idNode1, int idNode2) {
 		return adjacencia[idNode1][idNode2];
 	}
+	
+	public Integer[][] GetGraf() {
+		return adjacencia;
+	}
 
 }
