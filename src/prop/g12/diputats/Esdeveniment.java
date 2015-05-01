@@ -45,7 +45,7 @@ public abstract class Esdeveniment {
 	}
 	
 	public void afegirDiputat(Diputat d) {
-		dip.add(d);
+		if(!dip.contains(d)) dip.add(d);
 	}
 	
 	public ArrayList<Diputat> getDiputats() {
