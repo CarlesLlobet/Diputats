@@ -10,10 +10,10 @@ public class Empresa {
 	
 	public Empresa() {};
 	
-	/*public Empresa(String nom, String a) {
+	public Empresa(String nom, String a) {
 		this.nom = nom;
 		this.ambit = stringToAmbit(a);
-	}*/
+	}
 	
 	public String getNom() {
 		return nom;
