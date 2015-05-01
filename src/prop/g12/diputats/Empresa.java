@@ -23,13 +23,13 @@ public class Empresa {
 		this.nom = nom;
 	}
 	
-	public TAmbit stringToAmbit(String a) {
+	private TAmbit stringToAmbit(String a) {
 		if (a.equals("industria"))return TAmbit.industria;				
 		else if (a.equals("comercial")) return TAmbit.comercial;
 		else return TAmbit.serveis;
 	}
 	
-	public String ambitToString(TAmbit a) {
+	private String ambitToString(TAmbit a) {
 		if (a.equals(TAmbit.industria))return "industria";				
 		else if (a.equals(TAmbit.comercial)) return "comercial";
 		else return "serveis";

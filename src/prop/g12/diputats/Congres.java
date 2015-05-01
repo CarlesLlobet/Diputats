@@ -16,8 +16,9 @@ public class Congres {
 	public void setCongres(ArrayList<Diputat> congres) {this.congres = congres;}
 	
 	
-	public void altaDiputat(Diputat d) { 
+	public void altaDiputat(Diputat d) throws Exception{ 
 		if(!congres.contains(d)) congres.add(d);
+		else throw new Exception("El diputat ja existeix");
 	}
 	
 	public Diputat cercaDiputat(String nom) throws Exception {
@@ -31,7 +32,7 @@ public class Congres {
 		else return dip;		
 	}
 	
-	public void baixaDiputat(String nom) {
+	public void baixaDiputat(String nom) throws Exception {
         boolean find = false;
         for(int i = 0; i < congres.size() && !find; i++) {
             Diputat dip = congres.get(i);
@@ -49,7 +50,7 @@ public class Congres {
         		}
             }
         }
-        if (!find) System.out.print("No existeix el diputat amb nom"+ nom);
+        if (!find) throw new Exception("No existeix el diputat amb nom "+ nom);
 	}
 	
 	private void afinitatEmpresa(int i, int j, double a) {
