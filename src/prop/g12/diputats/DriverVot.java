@@ -46,7 +46,7 @@ public class DriverVot {
 					Votacio v = new Votacio();
 					v.setCodi(sv.getCodi());
 					v.setDescripcio(sv.getDescripcio());
-					v.setData(sv.getData());
+					v.setData(sv.getData().toString());
 					
 					vot.setVotacio(v);
 					
