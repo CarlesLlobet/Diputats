@@ -136,4 +136,11 @@ public class Diputat {
 	 */
 	public ArrayList<Votacio> getVotacions() { return vot;}
 	
+	/**
+	 * Determina la empresa on treballa el Diputat
+	 */
+	public void setEmpresa(Empresa empr) { 
+		this.empr = empr;
+	}
+	
 }
