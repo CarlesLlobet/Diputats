@@ -19,11 +19,13 @@ public class Votacio extends Esdeveniment{
 	/**
 	 * Creadora de la clase Votacio amb parametres
 	 * @param codi: Codi de votacio, descripcio: Tema de la votacio, data: Data de la votacio
+	 * @throws ParseException 
 	 */
-	public Votacio(int codi, String descripcio, Date data) {
+	public Votacio(int codi, String descripcio, String d) throws ParseException {
 		this.codi = codi;
 		this.descripcio = descripcio;
-		this.data = data;
+		setData(d);
+		this.data = getData();
 	}
 	
 	/**

@@ -4,10 +4,11 @@ import java.util.Date;
 
 public class Conferencia extends Esdeveniment {
 
-		public Conferencia(int codi, String descripcio, Date data) {
+		public Conferencia(int codi, String descripcio, String d) throws ParseException {
 			this.codi = codi;
 			this.descripcio = descripcio;
-			this.data = data;
+			setData(d);
+			this.data = getData();
 		}
 		
 		public int getCodi(){

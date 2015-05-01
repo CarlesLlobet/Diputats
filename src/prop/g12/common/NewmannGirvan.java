@@ -16,9 +16,16 @@ public class NewmannGirvan {
 	int maximActual;
 	boolean first;
 	
-	
+	/**
+	 * Creadora per defecte: Crea una instancia buida de la classe NewmanGirvan
+	 */
 	public NewmannGirvan() {}
 	
+	/**
+	 * Pre: La funció que aplica l'algorisme NewmanGirvain sobre un graf
+	 * @param graf: Matriu d'adjacencies inicial
+	 * @return Retorna una matriu d'Integers amb l'algorisme NewmanGirvain aplicat
+	 */
 	public Integer[][] NewmanGirvainSOL(Integer[][] graf) {
 		first = true;
 		nSize = graf[0].length;
@@ -39,7 +46,13 @@ public class NewmannGirvan {
 		return grafSol; // Acabat!
 	}
 	
-
+	/**
+	 * Pre: 0 <= i,j <= nSize
+	 * @param mat: matriu d'adjacencies
+	 * @param i: node inicial des d'on l'algorisme comença
+	 * @param j: node final on l'algorisme acaba
+	 * @return Retorna una matriu amb les arestes dels camins curts entre els nodes i-j
+	 */
 	static Integer[][] SearchAlg (Integer[][]mat, Integer i, Integer j) {
 		LinkedList<Integer> lista = new LinkedList<Integer>();
 		Integer nodeAct, nextNode;
@@ -91,6 +104,12 @@ public class NewmannGirvan {
 	  	return padre;
 	}
 	
+	/**
+	 * Pre: Pre: 0 <= n <= nSize
+	 * @param m: matriu d'adjacencies
+	 * @param n: node on trobar les adjacencies
+	 * @return Retorna un vector d'identificadors dels nodes adjacents a n
+	 */
 	private static Integer[] adjMat(Integer[][] m, Integer n) {
 		Integer[] ret = null;
 		int i = 0;
@@ -103,7 +122,13 @@ public class NewmannGirvan {
 		return ret;		
 	}
 	
-	
+	/**
+	 * Pre: 0 <= i,j <= nSize
+	 * @param p: Matriu d'adjacencies
+	 * @param ini: Identificar del node on acaba la cerca
+	 * @param fin: Identificador del node on comença la cerca
+	 * @return Retorna una matriu amb la betweeness de cada aresta
+	 */
 	static Integer[][] addEdges(Integer[][]p, Integer ini, Integer fin) {
 		int s = 0;
 		Boolean[] v = new Boolean[nSize];
@@ -132,6 +157,11 @@ public class NewmannGirvan {
 		return edges;
 	}
 	
+	/**
+	 * Pre: -
+	 * @param ed: Matriu d'Integers on estan tots els valors dels betweeness de les arestes
+	 * @return Retorna una matriu amb la eliminacio de l'aresta amb més betweeness
+	 */
 	Integer[][] removeEdge(Integer[][] ed) {
 		Integer max = 0;
 		Integer[] vecF = null;
@@ -162,6 +192,11 @@ public class NewmannGirvan {
 		return grafSol;
 	}
 	
+	/**
+	 * Pre: -
+	 * @param ed: Matriu d'Integers on estan tots els valors dels betweeness de les arestes
+	 * @return Retorna la mitja aritmetica del sumatori betweeness de totes les arestes
+	 */
 	int getTH(Integer[][] ed) {
 		int suma = 0;
 		for (int i = 0; i < nSize; ++i) {

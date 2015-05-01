@@ -5,10 +5,11 @@ import java.util.Date;
 
 public class Reunio extends Esdeveniment {
 
-	public Reunio(int codi, String descripcio, Date data) {
+	public Reunio(int codi, String descripcio, String d) throws ParseException {
 		this.codi = codi;
 		this.descripcio = descripcio;
-		this.data = data;
+		setData(d);
+		this.data = getData();
 	}
 	
 	public int getCodi(){
