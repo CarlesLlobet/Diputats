@@ -1,4 +1,6 @@
 package prop.g12.diputats;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -74,9 +76,10 @@ public class Votacio extends Esdeveniment{
 	/**
 	 * Posa data a la Votacio
 	 * @param Date data: data a posar a la Votacio
+	 * @throws ParseException 
 	 */
-	public void setData(Date data) {
-		super.setData(data);
+	public void setData(String d) throws ParseException {
+		super.setDate(d);
 	}
 	
 	/**
@@ -92,6 +95,6 @@ public class Votacio extends Esdeveniment{
 	 */
 	public Map<Diputat,Vot> getVots() {
 		return vots;
-	}
+	}	
 	
 }

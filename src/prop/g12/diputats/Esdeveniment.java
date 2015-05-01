@@ -1,4 +1,6 @@
 package prop.g12.diputats;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public abstract class Esdeveniment {
@@ -26,8 +28,19 @@ public abstract class Esdeveniment {
 		this.descripcio = descripcio;
 	}
 	
-	public void setData(Date data) {
-		this.data = data;
+	/**
+	 * Posa data a la Votacio
+	 * @param Date data: data a posar a la Votacio
+	 * @throws ParseException 
+	 */
+	public void setDate(String d) throws ParseException {
+		StringToData(d);
+	}
+	
+	public void StringToData(String d) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date d2 = sdf.parse(d);
+		this.data = d2;
 	}
 	
 }

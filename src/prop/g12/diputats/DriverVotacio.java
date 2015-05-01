@@ -48,9 +48,7 @@ public class DriverVotacio {
                     System.out.println("Introdueix la data de la votacio: Format(dd/mm/aaaa)");
                     while(!sc.hasNext());
                     data = sc.next();
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                    Date d2 = sdf.parse(data);
-                    v.setData(d2);
+                    v.setData(data);
                     System.out.println("Votacio creada");
                     break;
                 case 1:

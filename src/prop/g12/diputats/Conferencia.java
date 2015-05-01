@@ -1,4 +1,5 @@
 package prop.g12.diputats;
+import java.text.ParseException;
 import java.util.Date;
 
 public class Conferencia extends Esdeveniment {
@@ -29,7 +30,7 @@ public class Conferencia extends Esdeveniment {
 			super.setDescripcio(descripcio);
 		}
 		
-		public void setData(Date data) {
-			super.setData(data);
+		public void setData(String d) throws ParseException {
+			super.setDate(d);
 		}
 }

@@ -60,12 +60,14 @@ public class DriverNewmanGirvan {
 				break;
 			case 2:
 				System.out.println("Adjacencies dels dos vertexs seleccionats:");
+				System.out.print("Adjacencies del node "+iNode+": ");
 				for (int k = 0; k < n; ++k) {
-					System.out.print(graf[iNode][k]+"  ");
+					if (graf[iNode][k] >= 0) System.out.print(k+", ");
 				}		
 				System.out.println();
+				System.out.print("Adjacencies del node "+jNode+": ");
 				for (int kk = 0; kk < n; ++kk) {
-					System.out.print(graf[jNode][kk]+"  ");
+					if (graf[jNode][kk] >= 0) System.out.print(kk+", ");
 				}	
 				break;
 			case 3:
