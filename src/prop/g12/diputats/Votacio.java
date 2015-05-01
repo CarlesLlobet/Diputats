@@ -12,13 +12,17 @@ public class Votacio extends Esdeveniment{
 	
 	/**
 	 * Creadora de la clase Votacio
+	 * Post: Crea una instancia de la classe Votacio sense atributs
 	 */
 	public Votacio(){}
 
 	/**
 	 * Creadora de la clase Votacio amb parametres
-	 * @param codi: Codi de votacio, descripcio: Tema de la votacio, data: Data de la votacio
-	 * @throws ParseException 
+	 * @param codi: Codi de votacio 
+	 * @param descripcio: Tema de la votacio 
+	 * @param data: Data la votacio
+	 * @throws ParseException
+	 * Pos: Crea una instancia de Votació amb els atributs que es pasen per parametre 
 	 */
 	public Votacio(int codi, String descripcio, String d) throws ParseException {
 		this.codi = codi;
@@ -28,8 +32,9 @@ public class Votacio extends Esdeveniment{
 	}
 	
 	/**
-	 * Codi, descripcio i data de Votacio agafada de la superclase Esdeveniment
-	 * @param e: Esdeveniment relacionat amb votacio
+	 * Pre: -
+	 * @param e: Esdeveniment existent
+	 * Post: Crea una instancia de Votació amb les mateixes dades que l'esdeveniment
 	 */
 	public Votacio(Esdeveniment e) {
 		this.codi = e.codi;
@@ -38,55 +43,63 @@ public class Votacio extends Esdeveniment{
 	}
 	
 	/**
-	 * Retorna el codi de Votacio
+	 * Pre: -
+	 * @return Retorna el codi de Votacio
 	 */
 	public int getCodi(){
 		return super.getCodi();
 	}
 	
 	/**
-	 * Retorna la descripcio de Votacio
+	 * Pre: -
+	 * @return Retorna la descripcio de Votacio
 	 */
 	public String getDescripcio() {
 		return super.getDescripcio();
 	}
 	
 	/**
-	 * Retorna la data de Votacio
+	 * Pre: -
+	 * @return Retorna la data de Votacio
 	 */
 	public Date getData() {
 		return super.getData();
 	}
 
 	/**
-	 * Posa codi a la Votacio
+	 * Pre: -
 	 * @param int codi: Codi a posar a la Votacio
+	 * Post: El codi de la votacio passa a ser el codi del parametre
 	 */
 	public void setCodi(int codi) {
 		super.setCodi(codi);
 	}
 	
 	/**
-	 * Posa descripcio a la Votacio
+	 * Pre: -
 	 * @param String descripcio: descripcio a posar a la Votacio
+	 * Post: La descripcio de la votacio passa a ser la descripcio del parametre
 	 */
 	public void setDescripcio(String descripcio) {
 		super.setDescripcio(descripcio);
 	}
 	
 	/**
-	 * Posa data a la Votacio
-	 * @param Date data: data a posar a la Votacio
+	 * Pre: -
+	 * @param d: data a posar a la Votacio
 	 * @throws ParseException 
+	 * Post: La data de la votacio passa a ser la data del parametre
 	 */
 	public void setData(String d) throws ParseException {
 		super.setDate(d);
 	}
 	
 	/**
-	 * Afegeix un Vot v al Diputat d
-	 * @param Vot v: Vot efectuat per un Diputat d, Diputat d: Diputat que efectua el Vot v
+	 * Pre: -
+	 * @param v: Vot efectuat per el diputat d
+	 * @param d: Diputat que ha votat a la votacio
 	 * @throws Exception 
+	 * Post: Afegeix un vot de un diputat en una votacio
 	 */
 	public void afegirVot(Vot v, Diputat d) throws Exception {
 		if (!v.equals(TVot.contra) && !v.equals(TVot.favor) && !v.equals(TVot.abstencio)) {
@@ -99,7 +112,8 @@ public class Votacio extends Esdeveniment{
 	}
 	
 	/**
-	 * Retorna la llista dels vots efectuats pels diputats
+	 * Pre: -
+	 * @return Retorna la llista dels vots efectuats pels diputats
 	 */
 	public Map<Diputat,Vot> getVots() {
 		return vots;
