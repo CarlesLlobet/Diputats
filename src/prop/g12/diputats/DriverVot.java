@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.text.ParseException;
 
 public class DriverVot {
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introdueix 0 per provar el constructor de la classe Vot\n"
 			+ "Introdueix 1 per provar getVot\n "
