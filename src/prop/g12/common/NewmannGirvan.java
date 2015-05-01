@@ -29,18 +29,18 @@ public class NewmannGirvan {
 			path = null;
 			for (Integer j = i; j < nSize; ++j) {
 				if (!(i.equals(j))) {
-					path = SearchAlg(grafSol,i,j);
-					addEdges(path,i,j);
+					path = SearchAlg(grafSol,i,j); // arestas con los caminos mas cortos
+					edges = addEdges(path,i,j);
 				}
 			}
 		}
-		removeEdge(); //Eliminada/es aresta/es més grans
+		grafSol = removeEdge(edges); //Eliminada/es aresta/es més grans
 		if (maximActual > threshold) NewmanGirvainSOL(grafSol); //Necesitem mes supresions
 		return grafSol; // Acabat!
 	}
 	
 
-	private static Integer[][] SearchAlg (Integer[][]mat, Integer i, Integer j) {
+	static Integer[][] SearchAlg (Integer[][]mat, Integer i, Integer j) {
 		LinkedList<Integer> lista = new LinkedList<Integer>();
 		Integer nodeAct, nextNode;
 		caminos = null;
@@ -100,12 +100,11 @@ public class NewmannGirvan {
 				++i;
 			}
 		}
-		return ret;
-		
+		return ret;		
 	}
 	
 	
-	private static void addEdges(Integer[][]p, Integer ini, Integer fin) {
+	static Integer[][] addEdges(Integer[][]p, Integer ini, Integer fin) {
 		int s = 0;
 		Boolean[] v = new Boolean[nSize];
 	  	Arrays.fill(v, Boolean.FALSE);
@@ -117,39 +116,42 @@ public class NewmannGirvan {
 		lista.add(fin);
 		Integer nodeAct = fin;
 		v[nodeAct]=true;
-		while (!nodeAct.equals(ini)) {
-			nodeAct = lista.pollFirst();
-			int size = p[nodeAct].length;
-			for (int i = 0; i < size; ++i) {
-				edges[nodeAct][p[nodeAct][i]] = edges[nodeAct][p[nodeAct][i]]+(1/s);
-				if (!v[p[nodeAct][i]]) {
-					lista.add(p[nodeAct][i]);
-					v[p[nodeAct][i]]=true;
+		if (s!=0) { // Si s == 0, significa que no hay caminos entre i y j
+			while (!nodeAct.equals(ini)) {
+				nodeAct = lista.pollFirst();
+				int size = p[nodeAct].length;
+				for (int i = 0; i < size; ++i) {
+					edges[nodeAct][p[nodeAct][i]] = edges[nodeAct][p[nodeAct][i]]+(1/s);
+					if (!v[p[nodeAct][i]]) {
+						lista.add(p[nodeAct][i]);
+						v[p[nodeAct][i]]=true;
+					}
 				}
 			}
 		}
+		return edges;
 	}
 	
-	private void removeEdge() {
+	Integer[][] removeEdge(Integer[][] ed) {
 		Integer max = 0;
 		Integer[] vecF = null;
 		Integer[] vecC = null;
 		Integer k = 0;
 		for (int i = 0; i < nSize; ++i) {
 			for (int j = 0; j < i; ++j) {
-				if (edges[i][j]>max) {
+				if (ed[i][j]>max) {
 					vecF = null; vecC = null;
 					vecF[0]=i; vecC[0]=j;
 					k=1;
 				}
-				else if (edges[i][j].equals(max)) {
+				else if (ed[i][j].equals(max)) {
 					vecF[k]=i; vecC[k]=j;
 					++k;
 				}
 			}
 		}
 		if (first) {
-			threshold = getTH();
+			threshold = getTH(ed);
 			first = false;
 		}
 		maximActual = max;
@@ -157,13 +159,14 @@ public class NewmannGirvan {
 		for (int i = 0; i < n; ++i) {
 			grafSol[vecF[i]][vecC[i]] = -1;
 		}
+		return grafSol;
 	}
 	
-	private int getTH() {
+	int getTH(Integer[][] ed) {
 		int suma = 0;
 		for (int i = 0; i < nSize; ++i) {
 			for (int j = 0; j < nSize; ++j) {
-				suma = edges[i][j];
+				suma = ed[i][j];
 			}
 		}
 		return suma/nSize;
