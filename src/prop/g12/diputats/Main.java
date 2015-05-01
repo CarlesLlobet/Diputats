@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import prop.g12.common.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,7 +23,7 @@ import org.jfree.util.Rotation;
 
 public class Main {
 	
-	private Congres cd;
+	private Congres congres;
 	
 	public static class Ventana3D extends JFrame{
 		JPanel panel;
@@ -129,7 +130,7 @@ public class Main {
 			String procedencia = input.nextLine();
 			out.println("La seva procedencia es "+ procedencia);
 			D = new Diputat(nomD, ideologia, procedencia);
-			cd.altaDiputat(D);
+			congres.altaDiputat(D);
 			String nomE = input.nextLine();
 			out.println("El nom de l'empresa es "+ nomE);
 			//try per ambit
@@ -153,22 +154,34 @@ public class Main {
 				while(input.hasNext()) { //llista parells diputat + vot
 					nomD = input.nextLine();
 					String votD = input.nextLine();
-					D = cd.cercaDiputat(nomD);
+					D = congres.cercaDiputat(nomD);
 					//vot = new Vot(votD, D, v);
 					//v.afegirVot(vot, D);
-					//D.afegirVotacio(v);					
+					//D.afegirEsdeveniment(v);					
 				}
 			}
 			else if(desc.equals("reunio")) { //si es reunio
 				Reunio r = new Reunio(codi, desc, data);
 				while(input.hasNext()) {//llista diputats
 					nomD = input.nextLine();
-					D = cd.cercaDiputat(nomD);
-					//r.afegir
+					D = congres.cercaDiputat(nomD);
+					//r.afegirDiputat(D);
+					//D.afegirEsdeveniment(r);
 				}
 			}
-			
+			else if(desc.equals("conferencia")) { //si es conferencia
+				Conferencia c = new Conferencia(codi, desc, data);
+				while(input.hasNext()) {//llista diputats
+					nomD = input.nextLine();
+					D = congres.cercaDiputat(nomD);
+					//c.afegirDiputat(D);
+					//D.afegirEsdeveniment(c);
+				}
+			}			
 		}
+		congres.calculAfinitat(); //a congres tindrem el graf amb les afinitats calculades
+		//aplicar algorisme
+		//mostrar solucio
 		out.close();		
 		//Si cliques el boto de la estadistica de temps en funcio del nombre de diputats
 		new VentanaLinear().setVisible(true);		

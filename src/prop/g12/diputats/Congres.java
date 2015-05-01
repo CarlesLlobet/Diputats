@@ -1,6 +1,7 @@
 package prop.g12.diputats;
 
 import java.util.*;
+
 import prop.g12.common.Graf;
 
 public class Congres {
@@ -116,7 +117,7 @@ public class Congres {
 		a -= x;
 	}
 	
-	public void calculAfinitat() {
+	public void calculAfinitat() throws Exception {
 		graf.crearGraf(congres.size());
 		congres = graf.getNodes();
 		for (int i = 0; i < congres.size(); i++) {			
