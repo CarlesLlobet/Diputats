@@ -14,13 +14,36 @@ public class StubGraf<T> {
 	public StubGraf() {
 		numNodes = 5;
 		adjacencia = new Integer[5][5];
-		Integer[] pesos = new Integer[] {0,2,1,1,-1};
-		for (int i = 0; i < numNodes; ++i) {
-			for (int j = i; j < numNodes; ++j) {
-				if (i == j) adjacencia[i][j] = -1;
-				else adjacencia[i][j] = pesos[j];
-			}
-		}
+		adjacencia[0][0] = -1;
+		adjacencia[0][1] = 0;
+		adjacencia[0][2] = -1;
+		adjacencia[0][3] = 2;
+		adjacencia[0][4] = -1;
+		
+		adjacencia[1][0] = 0;
+		adjacencia[1][1] = -1;
+		adjacencia[1][2] = 1;
+		adjacencia[1][3] = 1;
+		adjacencia[1][4] = -1;
+		
+		adjacencia[2][0] = -1;
+		adjacencia[2][1] = 1;
+		adjacencia[2][2] = -1;
+		adjacencia[2][3] = -1;
+		adjacencia[2][4] = 1;
+		
+		adjacencia[3][0] = 2;
+		adjacencia[3][1] = 1;
+		adjacencia[3][2] = -1;
+		adjacencia[3][3] = -1;
+		adjacencia[3][4] = 1;
+		
+		adjacencia[4][0] = -1;
+		adjacencia[4][1] = -1;
+		adjacencia[4][2] = 1;
+		adjacencia[4][3] = 1;
+		adjacencia[4][4] = -1;
+		
 		nodes = new ArrayList<T> (5);
 		c = 5;
 	}

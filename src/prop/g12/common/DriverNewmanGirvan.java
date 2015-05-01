@@ -34,31 +34,38 @@ public class DriverNewmanGirvan {
 			case 0:
 				System.out.println("Aquest es el nostre graf de prova:");
 				for (int i = 0; i < n; ++i) {
-					System.out.println("\n");
-					for (int j = i; j < n; ++j) {
-						System.out.println(graf[i][j]);
+					System.out.println();
+					for (int j = 0; j < n; ++j) {
+						System.out.print(graf[i][j]+"  ");
 					}
 				}
+				System.out.println();
+				System.out.println("Introdueix node inicial:");
+				while(!sc.hasNext());
+				iNode = sc.nextInt();
+				System.out.println("Introdueix node final:");
+				while(!sc.hasNext());
+				jNode = sc.nextInt();
 				break;
 			case 1:
 				System.out.println("Introdueix el node inici i node final, no poden ser el mateix, els valors van entre [0,4]:");
 				System.out.println("Introdueix node inicial:");
 				sol = ng.SearchAlg(graf,iNode,jNode);
 				for (int ii = 0; ii < n; ++ii) {
-					System.out.println("\n");
+					System.out.println();
 					for (int jj = ii; jj < n; ++jj) {
-						System.out.println(graf[ii][jj]+" ");
+						System.out.print(graf[ii][jj]+"  ");
 					}
 				}	
 				break;
 			case 2:
 				System.out.println("Adjacencies dels dos vertexs seleccionats:");
 				for (int k = 0; k < n; ++k) {
-					System.out.println(graf[iNode][k]+" ");
+					System.out.print(graf[iNode][k]+"  ");
 				}		
-				System.out.println("\n");
+				System.out.println();
 				for (int kk = 0; kk < n; ++kk) {
-					System.out.println(graf[jNode][kk]+" ");
+					System.out.print(graf[jNode][kk]+"  ");
 				}	
 				break;
 			case 3:
@@ -66,7 +73,7 @@ public class DriverNewmanGirvan {
 				bet = ng.addEdges(sol,iNode,jNode);
 				max = 0;
 				for (int ii = 0; ii < n; ++ii) {
-					for (int jj = ii; jj < n; ++jj) {
+					for (int jj = 0; jj < n; ++jj) {
 						if (max < bet[ii][jj]) max = bet[ii][jj];
 					}
 				}	
@@ -77,12 +84,12 @@ public class DriverNewmanGirvan {
 				break;
 			case 5:
 				System.out.println("Graf solucio una vegada eliminada les arestes: ");
-				System.out.println("\n");
+				System.out.println();
 				sup = ng.removeEdge(bet);
 				for (int i = 0; i < n; ++i) {
-					System.out.println("\n");
+					System.out.println();
 					for (int j = i; j < n; ++j) {
-						System.out.println(sup[i][j]);
+						System.out.print(sup[i][j]);
 					}
 				}
 				break;
