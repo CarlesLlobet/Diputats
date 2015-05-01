@@ -29,7 +29,6 @@ public class Diputat {
 	 */
 	private String procedencia;	
 	
-	
 	/**
 	 * Creadora de la clase Diputat
 	 */
