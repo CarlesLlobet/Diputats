@@ -1,6 +1,8 @@
 package prop.g12.common;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 public class StubGraf<T> {
 	
@@ -10,9 +12,14 @@ public class StubGraf<T> {
 	int c;
 
 	public StubGraf() {
+		Random r = new Random();
 		numNodes = 3;
 		adjacencia = new Integer[3][3];
-		adjacencia = {1 , -1, 0, 0, 1, -1, 0, 1, -1};
+		for (int i = 0; i < numNodes; ++i) {
+			for (int j = 0; j < numNodes; ++j) {
+				adjacencia[i][j] = (int) (Math.random()*2);
+			}
+		}
 		nodes = new ArrayList<T> (9);
 		c = 9;
 	}
