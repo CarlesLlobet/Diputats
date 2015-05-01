@@ -2,7 +2,7 @@ package prop.g12.common;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
+
 
 public class StubGraf<T> {
 	
@@ -12,16 +12,17 @@ public class StubGraf<T> {
 	int c;
 
 	public StubGraf() {
-		Random r = new Random();
-		numNodes = 3;
-		adjacencia = new Integer[3][3];
+		numNodes = 5;
+		adjacencia = new Integer[5][5];
+		Integer[] pesos = new Integer[] {0,2,1,1,-1};
 		for (int i = 0; i < numNodes; ++i) {
-			for (int j = 0; j < numNodes; ++j) {
-				adjacencia[i][j] = (int) (Math.random()*2);
+			for (int j = i; j < numNodes; ++j) {
+				if (i == j) adjacencia[i][j] = -1;
+				else adjacencia[i][j] = pesos[j];
 			}
 		}
-		nodes = new ArrayList<T> (numNodes);
-		c = 3;
+		nodes = new ArrayList<T> (5);
+		c = 5;
 	}
 	
 	public int GetNumNodes() {

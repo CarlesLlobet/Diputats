@@ -17,6 +17,8 @@ public class NewmannGirvan {
 	boolean first;
 	
 	
+	public NewmannGirvan() {}
+	
 	public Integer[][] NewmanGirvainSOL(Integer[][] graf) {
 		first = true;
 		nSize = graf[0].length;
