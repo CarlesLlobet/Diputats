@@ -6,21 +6,57 @@ import prop.g12.common.Graf;
 
 public class Congres {
 
+	/**
+	 * Llista amb els diputats que conformen el congrés que representa el nostre projecte.
+	 */
 	private ArrayList<Diputat> congres;
+	
+	/**
+	 * Graf que representa les afinitats entre els diputats del congrés.
+	 */
 	private Graf<Diputat> graf;
 	
+	
+	
+	/**
+	 * Creadora de la classe Congrés
+	 * Pre: -
+	 * Post: Crea una instància buida de la classe Congrés.
+	 */
 	public Congres() {}
 	
+	/**
+	 * Pre: -
+	 * Post: Retorna la llista que conté tots els diputats del congrés.
+	 */
 	public ArrayList<Diputat> getCongres() {return congres;};
-	
+		
+	/**
+	 * Pre: -
+	 * @param congres: Llista de diputats
+	 * Post: Assigna a la llista congres de l'instància el paràmetre congres.
+	 */
 	public void setCongres(ArrayList<Diputat> congres) {this.congres = congres;}
 	
-	
+	/**
+	 * Pre: -
+	 * @param d: Diputat que volem afegir al congres.
+	 * @throws Exception
+	 * Post: Afegeix el diputat d al congres en cas que aquest no hi sigui.
+	 * 		 Si el diputat ja hi és, retorna una excepció.
+	 */
 	public void altaDiputat(Diputat d) throws Exception{ 
 		if(!congres.contains(d)) congres.add(d);
 		else throw new Exception("El diputat ja existeix");
 	}
 	
+	/**
+	 * Pre: -
+	 * @param nom: Nom del diputat a cercar dins la llista.
+	 * @throws Exception
+	 * Post: Retorna del diputat amb nom nom en cas que el trobi al congres.
+	 * 		 En cas contrari, retorna una excepció.
+	 */
 	public Diputat cercaDiputat(String nom) throws Exception {
 		Diputat dip = new Diputat();
 		boolean find = false;
@@ -32,6 +68,15 @@ public class Congres {
 		else return dip;		
 	}
 	
+	/**
+	 * Pre: -
+	 * @param nom: Nom del diputat a donar de baixa.
+	 * @throws Exception
+	 * Post: Elimina el diputat amb nom nom del congres i elimina la seva instancia de la
+	 * 		 llista de diputats que té l'empresa en la qual treballava, ambdues coses sempre
+	 * 		 que trobi el diputat al congrés.
+	 * 		 En cas contrari, retorna una excepció.
+	 */
 	public void baixaDiputat(String nom) throws Exception {
         boolean find = false;
         for(int i = 0; i < congres.size() && !find; i++) {
@@ -53,6 +98,14 @@ public class Congres {
         if (!find) throw new Exception("No existeix el diputat amb nom "+ nom);
 	}
 	
+	/**
+	 * Pre: -
+	 * @param i: Posicio dins el congres del primer diputat.
+	 * @param j: Posicio dins el congres del segon diputat.
+	 * @param a: Valor de l'afinitat entre els diputats calculada previament.
+	 * Post: Calcula l'afinitat que hi ha entre els diputats de les posicions i i j segons
+	 * 	 	 les empreses on treballen.
+	 */
 	private void afinitatEmpresa(int i, int j, double a) {
 		Diputat d1 = congres.get(i);
 		Diputat d2 = congres.get(j);
@@ -67,6 +120,14 @@ public class Congres {
 		else a -= 0.1;		
 	}
 	
+	/**
+	 * Pre: -
+	 * @param i: Posicio dins el congres del primer diputat.
+	 * @param j: Posicio dins el congres del segon diputat.
+	 * @param a: Valor de l'afinitat entre els diputats calculada previament.
+	 * Post: Calcula l'afinitat que hi ha entre els diputats de les posicions i i j segons
+	 * 	 	 les seves ideologies.
+	 */
 	private void afinitatIdeologia(int i, int j, double a) {
 		Diputat d1 = congres.get(i);
 		Diputat d2 = congres.get(j);
@@ -79,6 +140,14 @@ public class Congres {
 		else if(i2.equals(TIdeologia.dreta) && i1.equals(TIdeologia.esquerra)) a -= 0.2;
 	}
 	
+	/**
+	 * Pre: -
+	 * @param i: Posicio dins el congres del primer diputat.
+	 * @param j: Posicio dins el congres del segon diputat.
+	 * @param a: Valor de l'afinitat entre els diputats calculada previament.
+	 * Post: Calcula l'afinitat que hi ha entre els diputats de les posicions i i j segons
+	 * 	 	 la seva procedencia.
+	 */
 	private void afinitatProcedencia(int i, int j, double a) {
 		Diputat d1 = congres.get(i);
 		Diputat d2 = congres.get(j);
@@ -86,6 +155,14 @@ public class Congres {
 		else a -= 0.1;
 	}
 	
+	/**
+	 * Pre: -
+	 * @param i: Posicio dins el congres del primer diputat.
+	 * @param j: Posicio dins el congres del segon diputat.
+	 * @param a: Valor de l'afinitat entre els diputats calculada previament.
+	 * Post: Calcula l'afinitat que hi ha entre els diputats de les posicions i i j segons
+	 * 	 	 els esdeveniments que atenen.
+	 */
 	private void afinitatEsdeveniment(int i, int j, double a) {
 		Diputat d1 = congres.get(i);
 		Diputat d2 = congres.get(j);
@@ -118,6 +195,15 @@ public class Congres {
 		a -= x;
 	}
 	
+	/**
+	 * Pre: -
+	 * @throws Exception
+	 * Post: Calcula l'afinitat que hi ha entre tots els parells de diputats del congres
+	 * 	 	 tenint en compte diversos aspectes, tractats individualment amb la crida d'altres
+	 * 		 funcions.
+	 * 		 Un cop calculada cadascuna de les afinitats les afegeix a la matriu d'adjacencia
+	 * 		 del graf de diputats que fa servir. 
+	 */
 	public void calculAfinitat() throws Exception {
 		graf.crearGraf(congres.size());
 		congres = graf.getNodes();
