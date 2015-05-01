@@ -92,7 +92,9 @@ public class Votacio extends Esdeveniment{
 		if (v.equals(TVot.contra) && v.equals(TVot.favor) && v.equals(TVot.abstencio)) {
 			throw new Exception("El Vot no es correcta. Nomes pot ser contra, favor o abstencio");
 		}
-		// Comprobar diputat
+		for (int i = 0; i < super.dip.size(); ++i) {
+			if (dip.get(i).equals(d)) throw new Exception("El diputat ja ha votat a la votacio");
+		}
 		vots.put(d, v);
 	}
 	

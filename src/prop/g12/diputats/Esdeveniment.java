@@ -7,6 +7,7 @@ public abstract class Esdeveniment {
 	protected int codi;
 	protected String descripcio;
 	protected Date data;
+	protected ArrayList<Diputat> dip;
 	
 	public int getCodi() {
 		return codi;
@@ -43,6 +44,13 @@ public abstract class Esdeveniment {
 		this.data = d2;
 	}
 	
+	public void afegirDiputat(Diputat d) {
+		dip.add(d);
+	}
+	
+	public ArrayList<Diputat> getDiputats() {
+		return dip;
+	}
 }
 
 	

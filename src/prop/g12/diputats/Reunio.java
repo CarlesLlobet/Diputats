@@ -4,7 +4,7 @@ import java.util.Date;
 
 
 public class Reunio extends Esdeveniment {
-
+	
 	public Reunio(int codi, String descripcio, String d) throws ParseException {
 		this.codi = codi;
 		this.descripcio = descripcio;
@@ -34,5 +34,9 @@ public class Reunio extends Esdeveniment {
 	
 	public void setData(String d) throws ParseException {
 		super.setDate(d);
+	}
+	
+	public void afegirDiputat(Diputat d) {
+		super.afegirDiputat(d);
 	}
 }
