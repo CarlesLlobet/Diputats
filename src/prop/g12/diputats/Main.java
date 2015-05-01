@@ -99,7 +99,8 @@ public class Main {
 	    }
 	}
 	
-	public void main(String[] args) throws IOException {
+	
+	public void main(String[] args) throws Exception {
 		File file = new File("Diputats.txt");
 		PrintWriter out = null;
 		Scanner input;
@@ -114,33 +115,59 @@ public class Main {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		Diputat D;
+		Empresa E;
+		String nomD;
+		Vot vot;
 		int nDip = input.nextInt();
 		for (int i = 0; i < nDip; i++) {
-			String nomD = input.nextLine();
+			nomD = input.nextLine();
 			out.println("El nom del diputat es "+ nomD);
 			//falta try per ideologia
 			String ideologia = input.nextLine();
 			out.println("La seva ideologia es "+ ideologia);
 			String procedencia = input.nextLine();
 			out.println("La seva procedencia es "+ procedencia);
-			Diputat D = new Diputat(nomD, ideologia, procedencia);
+			D = new Diputat(nomD, ideologia, procedencia);
 			cd.altaDiputat(D);
 			String nomE = input.nextLine();
 			out.println("El nom de l'empresa es "+ nomE);
 			//try per ambit
 			String ambit = input.nextLine();
 			out.println("L'ambit de l'empresa es "+ ambit);
-			Empresa E = new Empresa(nomE, ambit);
+			E = new Empresa(nomE, ambit);
 			D.setEmpresa(E);
 			E.afegirDiputat(D);
 		}
-		int nEsd = input.nextInt();
-		for (int j = 0; j < nEsd; j++) {
+		//int nEsd = input.nextInt();
+		//for (int j = 0; j < nEsd; j++) {
+		while(input.hasNext()) { //mentre hi hagi esdeveniments
 			int codi = input.nextInt();
 			out.println("El codi de l'esdeveniment es "+ codi);
 			String desc = input.nextLine();
 			out.println("La descripcio de l'esdeveniment es " + desc);
-			//arreglar data
+			String data = input.nextLine();
+			out.println("La data de l'esdeveniment es " + data);
+			if(desc.equals("votacio")) { //si es votacio
+				Votacio v = new Votacio(codi, desc, data);
+				while(input.hasNext()) { //llista parells diputat + vot
+					nomD = input.nextLine();
+					String votD = input.nextLine();
+					D = cd.cercaDiputat(nomD);
+					//vot = new Vot(votD, D, v);
+					//v.afegirVot(vot, D);
+					//D.afegirVotacio(v);					
+				}
+			}
+			else if(desc.equals("reunio")) { //si es reunio
+				Reunio r = new Reunio(codi, desc, data);
+				while(input.hasNext()) {//llista diputats
+					nomD = input.nextLine();
+					D = cd.cercaDiputat(nomD);
+					//r.afegir
+				}
+			}
+			
 		}
 		out.close();		
 		//Si cliques el boto de la estadistica de temps en funcio del nombre de diputats

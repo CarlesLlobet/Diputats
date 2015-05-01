@@ -19,6 +19,17 @@ public class Congres {
 		if(!congres.contains(d)) congres.add(d);
 	}
 	
+	public Diputat cercaDiputat(String nom) throws Exception {
+		Diputat dip = new Diputat();
+		boolean find = false;
+		for(int i = 0; i < congres.size() && !find; i++) {
+            dip = congres.get(i);
+            if ((dip.getNom()).equals(nom)) find = true;
+		}
+		if(!find) throw new Exception("El diputat no existeix");
+		else return dip;		
+	}
+	
 	public void baixaDiputat(String nom) {
         boolean find = false;
         for(int i = 0; i < congres.size() && !find; i++) {
