@@ -60,7 +60,7 @@ public class DriverVotacio {
                     System.out.println("La descripio de la votacio es: " + v.getDescripcio());
                     break;              
                 case 3:
-                    System.out.println("La data de la votacio es: " + v.getData());
+                    System.out.println("La data de la votacio es: " + v.getData().toString());
                     break;              
                 case 4:
                 	sd = new StubDiputat();

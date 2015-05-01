@@ -20,8 +20,8 @@ public class StubGraf<T> {
 				adjacencia[i][j] = (int) (Math.random()*2);
 			}
 		}
-		nodes = new ArrayList<T> (9);
-		c = 9;
+		nodes = new ArrayList<T> (numNodes);
+		c = 3;
 	}
 	
 	public int GetNumNodes() {
