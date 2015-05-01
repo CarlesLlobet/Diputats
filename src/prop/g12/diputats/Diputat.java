@@ -40,9 +40,13 @@ public class Diputat {
 	 * @param n: Nom del Diputat, i: Ideologia del Diputat, p: Procedencia del diputat
 	 * @throws Exception: En cas de que ideologia no sigui correcte, Exception
 	 */
-	public Diputat(String n, String i, String p) throws Exception {
+	public Diputat(String n, String i, String p) {
 		nom = n;
-		ideologia = stringToIdeologia(i);
+		try {
+			ideologia = stringToIdeologia(i);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		procedencia = p;
 	}
 	
@@ -138,9 +142,20 @@ public class Diputat {
 	
 	/**
 	 * Determina la empresa on treballa el Diputat
+	 * @param Empresa empr: Empresa a posar al Diputat
 	 */
 	public void setEmpresa(Empresa empr) { 
 		this.empr = empr;
 	}
+	
+	/**
+	 * Retorna la llista d'Esdeveniments on participa el Diputat
+	 */
+	public ArrayList<Esdeveniment> setEsdeveniments() { return esdv;}
+	
+	/**
+	 * Retorna la llista de Votacions on participa el Diputat
+	 */
+	public ArrayList<Votacio> setVotacions() { return vot;}
 	
 }
