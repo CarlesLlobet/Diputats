@@ -36,7 +36,9 @@ public class Diputat {
 	
 	/**
 	 * Creadora de la clase Diputat amb parametres
-	 * @param n: Nom del Diputat, i: Ideologia del Diputat, p: Procedencia del diputat
+	 * @param n: Nom del Diputat 
+	 * @param i: Ideologia del Diputat 
+	 * @param p: Procedencia del diputat
 	 * @throws Exception: En cas de que ideologia no sigui correcte, Exception
 	 */
 	public Diputat(String n, String i, String p) {
@@ -50,22 +52,22 @@ public class Diputat {
 	}
 	
 	/**
-	 * Retorna el nom del Diputat
+	 * @return: Retorna el nom del Diputat
 	 */
 	public String getNom() {
 		return nom;
 	}
 
 	/**
-	 * Retorna la ideologia del Diputat
+	 * @return: Retorna la ideologia del Diputat
 	 */
 	public TIdeologia getIdeologia() {
 		return ideologia;
 	}
 	
 	/**
-	 * Transforma un String en un objecte de clase TIdeologia
-	 * @param String s: String a transformar en Ideologia (centre, esquerra, dreta)
+	 * @return: Transforma un String en un objecte de clase TIdeologia
+	 * @param s: String a transformar en Ideologia (centre, esquerra, dreta)
 	 * @return esquerra: ideologia d'esquerra, dreta: ideologia de dreta, centre: ideologia de centre
 	 * @throws Exception: Si no es cap dels anteriors, exception
 	 */
@@ -77,8 +79,8 @@ public class Diputat {
 	}
 	
 	/**
-	 * Transforma un String en un objecte de clase TIdeologia
-	 * @param String s: String a transformar en Ideologia (centre, esquerra, dreta)
+	 * @return: Transforma un TIdeologia en un String
+	 * @param a: Ideologia a transformar en String (centre, esquerra, dreta)
 	 * @return esquerra: ideologia d'esquerra, dreta: ideologia de dreta, centre: ideologia de centre
 	 * @throws Exception: Si no es cap dels anteriors, exception
 	 */
@@ -90,7 +92,7 @@ public class Diputat {
 	}
 	
 	/**
-	 * Retorna la procedencia del Diputat
+	 * @return: Retorna la procedencia del Diputat
 	 */
 	public String getProcedencia() {
 		return procedencia;
@@ -98,7 +100,7 @@ public class Diputat {
 	
 	/**
 	 * Posa nom al Diputat
-	 * @param String n: Nom a posar al Diputat
+	 * @param n: Nom a posar al Diputat
 	 */
 	public void setNom(String n) {
 		nom = n;
@@ -106,7 +108,7 @@ public class Diputat {
 	
 	/**
 	 * Posa ideologia al Diputat
-	 * @param String i: Ideologia a posar al Diputat
+	 * @param i: Ideologia a posar al Diputat
 	 * @throws Exception: Si no es esquerra, dreta o centre, exception
 	 */
 	public void setIdeologia(String i) throws Exception {
@@ -118,30 +120,30 @@ public class Diputat {
 	
 	/**
 	 * Posa procedencia al Diputat
-	 * @param String p: Procedencia a posar al Diputat
+	 * @param p: Procedencia a posar al Diputat
 	 */
 	public void setProcedencia(String p) {
 		procedencia = p;
 	}
 	
 	/**
-	 * Retorna la empresa on treballa el Diputat
+	 * @return: Retorna la empresa on treballa el Diputat
 	 */
 	public Empresa getEmpresa() { return empr;}
 	
 	/**
-	 * Retorna la llista d'Esdeveniments on participa el Diputat
+	 * @return: Retorna la llista d'Esdeveniments on participa el Diputat
 	 */
 	public ArrayList<Esdeveniment> getEsdeveniments() { return esdv;}
 	
 	/**
-	 * Retorna la llista de Votacions on participa el Diputat
+	 * @return: Retorna la llista de Votacions on participa el Diputat
 	 */
 	public ArrayList<Votacio> getVotacions() { return vot;}
 	
 	/**
 	 * Determina la empresa on treballa el Diputat
-	 * @param Empresa empr: Empresa a posar al Diputat
+	 * @param empr: Empresa a posar al Diputat
 	 */
 	public void setEmpresa(Empresa empr) { 
 		this.empr = empr;
