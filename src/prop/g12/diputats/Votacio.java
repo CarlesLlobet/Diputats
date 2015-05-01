@@ -89,11 +89,11 @@ public class Votacio extends Esdeveniment{
 	 * @throws Exception 
 	 */
 	public void afegirVot(Vot v, Diputat d) throws Exception {
-		if (v.equals(TVot.contra) && v.equals(TVot.favor) && v.equals(TVot.abstencio)) {
+		if (!v.equals(TVot.contra) && !v.equals(TVot.favor) && !v.equals(TVot.abstencio)) {
 			throw new Exception("El Vot no es correcta. Nomes pot ser contra, favor o abstencio");
 		}
-		for (int i = 0; i < super.dip.size(); ++i) {
-			if (dip.get(i).equals(d)) throw new Exception("El diputat ja ha votat a la votacio");
+		for (int i = 0; i < vots.size(); ++i) {
+			if (vots.get(i).equals(d)) throw new Exception("El diputat ja ha votat a la votacio");
 		}
 		vots.put(d, v);
 	}
