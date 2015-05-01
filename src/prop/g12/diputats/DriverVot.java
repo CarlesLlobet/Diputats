@@ -1,7 +1,6 @@
 package prop.g12.diputats;
 
 import java.util.Scanner;
-import java.text.ParseException;
 
 public class DriverVot {
 	public static void main(String[] args) throws Exception {
@@ -54,7 +53,7 @@ public class DriverVot {
 					
 					break;
 				case 1:
-					System.out.println("El vot ha estat: " + vot.votToString(vot.getVot()));
+					System.out.println("El vot ha estat: " + vot.getVot());
 					break;
 				case 2:
 					System.out.println("El vot l'ha fet el diputat: " + vot.getDiputat().getNom());

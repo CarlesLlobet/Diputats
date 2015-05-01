@@ -8,8 +8,8 @@ public class Vot {
 	public Vot() {
 	}
 	
-	public Vot(TVot v, Diputat d, Votacio vota){
-		this.vot = v;
+	public Vot(String v, Diputat d, Votacio vota){
+		this.vot = stringToVot(v);
 		this.diputat = d;
 		this.votacio = vota;
 	}
@@ -18,16 +18,10 @@ public class Vot {
 		return vot;
 	}
 	
-	public TVot stringToVot(String a) {
+	private TVot stringToVot(String a) {
 		if (a.equals("favor") || vot.equals("a favor"))return TVot.favor;				
 		else if (a.equals("contra") || vot.equals("en contra")) return TVot.contra;
 		else return TVot.abstencio;
-	}
-	
-	public String votToString(TVot tvot) {
-		if (tvot.equals(TVot.favor)) return "a favor";				
-		else if (tvot.equals(TVot.contra)) return "en contra";
-		else return "abstencio";
 	}
 	
 	public void setVot(String vot) throws Exception {
