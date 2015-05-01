@@ -123,16 +123,16 @@ public class Main {
 			out.println("La seva ideologia es "+ ideologia);
 			String procedencia = input.nextLine();
 			out.println("La seva procedencia es "+ procedencia);
-			//Diputat D = new Diputat(nomD, ideologia, procedencia);
-			//cd.altaDiputat(D);
+			Diputat D = new Diputat(nomD, ideologia, procedencia);
+			cd.altaDiputat(D);
 			String nomE = input.nextLine();
 			out.println("El nom de l'empresa es "+ nomE);
 			//try per ambit
 			String ambit = input.nextLine();
 			out.println("L'ambit de l'empresa es "+ ambit);
 			Empresa E = new Empresa(nomE, ambit);
-			//D.setEmpresa(E);
-			//E.afegirDiputat(D);
+			D.setEmpresa(E);
+			E.afegirDiputat(D);
 		}
 		int nEsd = input.nextInt();
 		for (int j = 0; j < nEsd; j++) {
