@@ -3,15 +3,15 @@ package prop.g12.diputats.domain;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
- 
 import java.util.Iterator;
 
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYSeriesCollection;
+
+import prop.g12.diputats.data.ControladorIO;
  
 
-import prop.g12.diputats.ControladorIO;
  
 public class ControladorEstadistica {
 	

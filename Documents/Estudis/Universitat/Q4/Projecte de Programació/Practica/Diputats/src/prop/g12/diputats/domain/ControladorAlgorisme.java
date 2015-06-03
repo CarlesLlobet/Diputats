@@ -1,11 +1,13 @@
-package prop.g12.diputats;
+package prop.g12.diputats.domain;
  
 import java.io.IOException;
 import java.util.ArrayList;
  
 
+
 import javax.swing.JTree;
  
+
 
 import prop.g12.common.CliquePercolation;
 import prop.g12.common.Graf;
@@ -13,6 +15,7 @@ import prop.g12.common.Louvain;
 import prop.g12.common.NewmanGirvan;
 import prop.g12.common.Solucio;
 import prop.g12.diputats.data.ControladorCongres;
+import prop.g12.diputats.data.ControladorIO;
 import prop.g12.diputats.data.Diputat;
 import prop.g12.diputats.domain.Afinitat;
 import prop.g12.diputats.domain.ControladorAfinitat;
