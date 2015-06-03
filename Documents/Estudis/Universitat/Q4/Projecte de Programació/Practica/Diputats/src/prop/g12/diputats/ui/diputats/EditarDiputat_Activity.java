@@ -27,7 +27,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellEditor;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 public class EditarDiputat_Activity extends JPanelFondo{
 	
@@ -266,17 +266,17 @@ public class EditarDiputat_Activity extends JPanelFondo{
 				String procedenciaC = txtProcedncia.getText();
 				String nomEmpresaC = txtNomEmpresa.getText();
 				try {
-					Principal.getCD().modificarDiputat(nomC, ideologiaC, procedenciaC, nomEmpresaC);
+					ControladorPrincipal.getCD().modificarDiputat(nomC, ideologiaC, procedenciaC, nomEmpresaC);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				try {
-					Principal.getCC().modificarEsdeveniment(esdeveniments);
+					ControladorPrincipal.getCC().modificarEsdeveniment(esdeveniments);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadDiputats();
+				ControladorPrincipal.loadDiputats();
 					
 			}
 		});
@@ -285,12 +285,12 @@ public class EditarDiputat_Activity extends JPanelFondo{
 			public void actionPerformed(ActionEvent arg0) {
 				int c = Integer.parseInt(textField.getText());
 				try {
-					Principal.getCC().eliminarAssistencia(nom, c);
+					ControladorPrincipal.getCC().eliminarAssistencia(nom, c);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadDiputats();
+				ControladorPrincipal.loadDiputats();
 					
 			}
 		});
@@ -298,7 +298,7 @@ public class EditarDiputat_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadBuscarDiputat();
+        		ControladorPrincipal.loadBuscarDiputat();
         	}
         });
 	}

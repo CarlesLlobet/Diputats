@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 public class VeureDiputat_Activity extends JPanelFondo{
 	
@@ -191,7 +191,7 @@ public class VeureDiputat_Activity extends JPanelFondo{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEditarDiputat(nom, procedencia, ideologia, nomEmpresa, ambitEmpresa, esdeveniments);
+				ControladorPrincipal.loadEditarDiputat(nom, procedencia, ideologia, nomEmpresa, ambitEmpresa, esdeveniments);
 					
 			}
 		});
@@ -199,12 +199,12 @@ public class VeureDiputat_Activity extends JPanelFondo{
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Principal.getCD().baixaDiputat(nom);
+					ControladorPrincipal.getCD().baixaDiputat(nom);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadDiputats();
+				ControladorPrincipal.loadDiputats();
 					
 			}
 		});
@@ -212,7 +212,7 @@ public class VeureDiputat_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadBuscarDiputat();
+        		ControladorPrincipal.loadBuscarDiputat();
         	}
         });
 	}

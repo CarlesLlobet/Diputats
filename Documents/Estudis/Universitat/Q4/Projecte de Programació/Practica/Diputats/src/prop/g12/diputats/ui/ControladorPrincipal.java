@@ -29,7 +29,7 @@ import prop.g12.diputats.ui.esdeveniments.EditarEsdeveniment_Activity;
 import prop.g12.diputats.ui.esdeveniments.Esdeveniments_Activity;
 import prop.g12.diputats.ui.esdeveniments.VeureEsdeveniment_Activity;
 
-public class Principal {
+public class ControladorPrincipal {
 	
 	//Contenedores
 	private static Ventana window = new Ventana();

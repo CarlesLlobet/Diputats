@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.congressos;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -187,7 +187,7 @@ public class Congressos_Activity extends JPanelFondo{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEditarCongres();
+				ControladorPrincipal.loadEditarCongres();
 					
 			}
 		});
@@ -195,7 +195,7 @@ public class Congressos_Activity extends JPanelFondo{
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadImportCongres();
+				ControladorPrincipal.loadImportCongres();
 					
 			}
 		});
@@ -203,7 +203,7 @@ public class Congressos_Activity extends JPanelFondo{
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadExportCongres();
+				ControladorPrincipal.loadExportCongres();
 					
 			}
 		});
@@ -211,12 +211,12 @@ public class Congressos_Activity extends JPanelFondo{
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Principal.getIO().generarRandom((int) spinner.getValue(), (int) spinner_1.getValue());
+					ControladorPrincipal.getIO().generarRandom((int) spinner.getValue(), (int) spinner_1.getValue());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadMenu();
+				ControladorPrincipal.loadMenu();
 					
 			}
 		});
@@ -225,19 +225,19 @@ public class Congressos_Activity extends JPanelFondo{
 			public void actionPerformed(ActionEvent arg0) {
 				JTree tree = null;
 				try {
-					tree = Principal.getCC().getArbreCongres();
+					tree = ControladorPrincipal.getCC().getArbreCongres();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadVeureCongres(tree);
+				ControladorPrincipal.loadVeureCongres(tree);
 					
 			}
 		});
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadMenu();
+        		ControladorPrincipal.loadMenu();
         	}
         });
 	}

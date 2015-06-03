@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.SystemColor;
 
@@ -231,19 +231,19 @@ public class AfegirDiputat_Activity extends JPanelFondo{
 				String e = txtEmpresa.getText();
 				String a = txtAmbitEmpresa.getText();
 				try {
-					Principal.getCD().afegirDiputat(n, i, p, e, a);
+					ControladorPrincipal.getCD().afegirDiputat(n, i, p, e, a);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 				deleteView();
-        		Principal.loadDiputats();
+        		ControladorPrincipal.loadDiputats();
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadDiputats();
+        		ControladorPrincipal.loadDiputats();
         	}
         });
 	}

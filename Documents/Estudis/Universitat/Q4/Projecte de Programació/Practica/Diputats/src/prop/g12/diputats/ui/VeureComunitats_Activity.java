@@ -92,7 +92,7 @@ public class VeureComunitats_Activity extends JPanelFondo{
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
 				try {
-					Principal.loadVeureGraf(tree, nomF);
+					ControladorPrincipal.loadVeureGraf(tree, nomF);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}	
@@ -102,14 +102,14 @@ public class VeureComunitats_Activity extends JPanelFondo{
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEditarComunitats(tree,nomF);	
+				ControladorPrincipal.loadEditarComunitats(tree,nomF);	
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadEscollirParametres();
+        		ControladorPrincipal.loadEscollirParametres();
         	}
         });
 	}

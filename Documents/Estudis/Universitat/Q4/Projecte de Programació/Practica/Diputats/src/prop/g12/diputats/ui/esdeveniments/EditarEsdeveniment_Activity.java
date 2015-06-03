@@ -22,7 +22,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 public class EditarEsdeveniment_Activity extends JPanelFondo{
 	
@@ -171,12 +171,12 @@ public class EditarEsdeveniment_Activity extends JPanelFondo{
 				String des = txtDescripcio.getText();
 				String dat = txtData.getText();
 				try {
-					Principal.getCE().modificarEsdeveniment(c,des,dat);
+					ControladorPrincipal.getCE().modificarEsdeveniment(c,des,dat);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadEsdeveniments();
+				ControladorPrincipal.loadEsdeveniments();
 					
 			}
 		});
@@ -184,7 +184,7 @@ public class EditarEsdeveniment_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadVeureEsdeveniments(codi,descripcio,data,participants);
+        		ControladorPrincipal.loadVeureEsdeveniments(codi,descripcio,data,participants);
         	}
         });
 	}

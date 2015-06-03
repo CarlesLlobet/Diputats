@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 public class AfegirEsdeveniment_Activity extends JPanelFondo{
 
@@ -165,19 +165,19 @@ public class AfegirEsdeveniment_Activity extends JPanelFondo{
 				String d = txtDescripcio.getText();
 				String dat = txtData.getText();
 				try {
-					Principal.getCE().crearEsdeveniment(d, c, dat);
+					ControladorPrincipal.getCE().crearEsdeveniment(d, c, dat);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 				deleteView();
-        		Principal.loadDiputats();				
+        		ControladorPrincipal.loadDiputats();				
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadEsdeveniments();
+        		ControladorPrincipal.loadEsdeveniments();
         	}
         });
 	}

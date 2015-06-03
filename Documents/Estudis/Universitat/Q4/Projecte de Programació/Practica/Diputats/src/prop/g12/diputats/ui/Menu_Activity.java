@@ -105,7 +105,7 @@ public class Menu_Activity extends JPanelFondo{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEscollirParametres();
+				ControladorPrincipal.loadEscollirParametres();
 					
 			}
 		});
@@ -113,7 +113,7 @@ public class Menu_Activity extends JPanelFondo{
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadImportComunitat();
+				ControladorPrincipal.loadImportComunitat();
 					
 			}
 		});
@@ -121,7 +121,7 @@ public class Menu_Activity extends JPanelFondo{
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadTriarEstadistica();
+				ControladorPrincipal.loadTriarEstadistica();
 					
 			}
 		});
@@ -129,7 +129,7 @@ public class Menu_Activity extends JPanelFondo{
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadCongressos();
+				ControladorPrincipal.loadCongressos();
 					
 			}
 		});

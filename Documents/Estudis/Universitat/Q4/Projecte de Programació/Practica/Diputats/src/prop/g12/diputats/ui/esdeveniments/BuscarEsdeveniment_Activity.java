@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.esdeveniments;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -125,7 +125,7 @@ public class BuscarEsdeveniment_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEsdeveniments();
+				ControladorPrincipal.loadEsdeveniments();
 					
 			}
 		});
@@ -133,16 +133,16 @@ public class BuscarEsdeveniment_Activity extends JPanelFondo{
 		acceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int ce = Integer.parseInt(codiEmpresa.getText());
-				ArrayList<String> info = Principal.getCC().getEsdeveniment(ce);
+				ArrayList<String> info = ControladorPrincipal.getCC().getEsdeveniment(ce);
 				if (info.get(0).equals("true")){
 					JTree esdev = null;
 					try {
-						esdev = Principal.getCC().getArbreParticipants(ce);
+						esdev = ControladorPrincipal.getCC().getArbreParticipants(ce);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 					deleteView();
-					Principal.loadVeureEsdeveniments(ce, info.get(1), info.get(2), esdev);
+					ControladorPrincipal.loadVeureEsdeveniments(ce, info.get(1), info.get(2), esdev);
 				}else warning.setText("L'esdeveniment amb codi " + ce + " no existeix!");
 					/*JTree esdev = null;
 					try {

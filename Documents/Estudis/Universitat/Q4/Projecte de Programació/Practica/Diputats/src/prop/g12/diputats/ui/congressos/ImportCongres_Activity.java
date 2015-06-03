@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.congressos;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -108,7 +108,7 @@ public class ImportCongres_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadCongressos();
+				ControladorPrincipal.loadCongressos();
 					
 			}
 		});
@@ -119,12 +119,12 @@ public class ImportCongres_Activity extends JPanelFondo{
 				File aux = new File("io/" + na + ".txt");
 				if (aux.exists()){
 					try {
-						Principal.getIO().llegirCongres(na);
+						ControladorPrincipal.getIO().llegirCongres(na);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 					deleteView();
-					Principal.loadCongressos();
+					ControladorPrincipal.loadCongressos();
 				}else warning.setText("L'arxiu " + na + " no existeix!");
 			}
 		});

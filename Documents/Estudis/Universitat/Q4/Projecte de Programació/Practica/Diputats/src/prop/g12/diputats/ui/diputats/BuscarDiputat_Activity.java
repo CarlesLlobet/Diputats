@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.diputats;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -125,7 +125,7 @@ public class BuscarDiputat_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEditarCongres();
+				ControladorPrincipal.loadEditarCongres();
 					
 			}
 		});
@@ -133,16 +133,16 @@ public class BuscarDiputat_Activity extends JPanelFondo{
 		acceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String nd = nomDiputat.getText();
-				ArrayList<String> info = Principal.getCC().getDiputat(nd);
+				ArrayList<String> info = ControladorPrincipal.getCC().getDiputat(nd);
 					if (info.get(0).equals("true")){
 						JTree esdev = null;
 						try {
-							esdev = Principal.getCC().getArbreEsdeveniments(nd);
+							esdev = ControladorPrincipal.getCC().getArbreEsdeveniments(nd);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
 						deleteView();
-						Principal.loadVeureDiputat(nd, info.get(1), info.get(2), info.get(3), info.get(4), esdev);
+						ControladorPrincipal.loadVeureDiputat(nd, info.get(1), info.get(2), info.get(3), info.get(4), esdev);
 					}else warning.setText("El Diputat amb nom " + nd + " no existeix!");
 					
 			}

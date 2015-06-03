@@ -22,7 +22,7 @@ abstract public class JPanelFondo extends JPanel{
      }
     
     protected void deleteView(){
-    	Principal.removeView(this);
+    	ControladorPrincipal.removeView(this);
     }
     
  }

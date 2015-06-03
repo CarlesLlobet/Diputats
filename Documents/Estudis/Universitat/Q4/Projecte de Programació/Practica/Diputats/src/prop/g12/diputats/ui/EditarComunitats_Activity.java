@@ -200,20 +200,20 @@ public class EditarComunitats_Activity extends JPanelFondo{
 				String cd = txtcomunitatX.getText();
 				JTree aux = null;
 				try {
-					aux = Principal.getCS().modificarSolucio(nd, cd, nomF, tree);
+					aux = ControladorPrincipal.getCS().modificarSolucio(nd, cd, nomF, tree);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				if (aux != null) Principal.loadVeureComunitats(aux, nomF);
-				else Principal.loadVeureComunitats(tree, nomF);
+				if (aux != null) ControladorPrincipal.loadVeureComunitats(aux, nomF);
+				else ControladorPrincipal.loadVeureComunitats(tree, nomF);
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadVeureComunitats(tree,nomF);
+        		ControladorPrincipal.loadVeureComunitats(tree,nomF);
         	}
         });
 	}

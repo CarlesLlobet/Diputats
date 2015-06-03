@@ -289,19 +289,19 @@ public class Parametres_Activity extends JPanelFondo{
 				else if (rdbtnCliqupercolation.isSelected()) opt = "clique";
 				JTree tree = null;
 				try {
-					tree = Principal.getCA().selectAlgorisme(opt,nomF,pEmp,pIde,pPro,pEsd);
+					tree = ControladorPrincipal.getCA().selectAlgorisme(opt,nomF,pEmp,pIde,pPro,pEsd);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadVeureComunitats(tree,nomF);
+				ControladorPrincipal.loadVeureComunitats(tree,nomF);
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadMenu();
+        		ControladorPrincipal.loadMenu();
         	}
         });
 	}

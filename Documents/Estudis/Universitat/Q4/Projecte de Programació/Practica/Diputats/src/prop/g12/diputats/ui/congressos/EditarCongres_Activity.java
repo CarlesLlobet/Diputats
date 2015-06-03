@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.congressos;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -93,7 +93,7 @@ public class EditarCongres_Activity extends JPanelFondo{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadDiputats();
+				ControladorPrincipal.loadDiputats();
 					
 			}
 		});
@@ -101,7 +101,7 @@ public class EditarCongres_Activity extends JPanelFondo{
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEsdeveniments();
+				ControladorPrincipal.loadEsdeveniments();
 					
 			}
 		});
@@ -109,7 +109,7 @@ public class EditarCongres_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadCongressos();
+        		ControladorPrincipal.loadCongressos();
         	}
         });
 	}

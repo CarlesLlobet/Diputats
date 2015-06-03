@@ -1,7 +1,7 @@
 package prop.g12.diputats.ui.congressos;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -108,7 +108,7 @@ public class ExportCongres_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadCongressos();
+				ControladorPrincipal.loadCongressos();
 					
 			}
 		});
@@ -118,13 +118,13 @@ public class ExportCongres_Activity extends JPanelFondo{
 				String na = nomArxiu.getText();
 				System.out.println("El nom d'arxiu és: " + na);
 					try {
-						Principal.getIO().escriureCongres(na);
+						ControladorPrincipal.getIO().escriureCongres(na);
 					} catch (Exception e) {
 						e.printStackTrace();
 						warning.setText("El nom d'arxiu " + na + " ja existeix!");
 					}
 					deleteView();
-					Principal.loadMenu();
+					ControladorPrincipal.loadMenu();
 			}
 		});
 	}

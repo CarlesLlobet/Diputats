@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 import javax.swing.SwingConstants;
 
@@ -112,7 +112,7 @@ public class TriarEstadistica_Activity extends JPanelFondo{
 				if (aux.exists()){
 					deleteView();
 					try {
-						Principal.loadEstadisticaNodes();
+						ControladorPrincipal.loadEstadisticaNodes();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -127,7 +127,7 @@ public class TriarEstadistica_Activity extends JPanelFondo{
 				if (aux.exists()){
 					deleteView();
 					try {
-						Principal.loadEstadisticaSolucions();
+						ControladorPrincipal.loadEstadisticaSolucions();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -138,7 +138,7 @@ public class TriarEstadistica_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadMenu();
+        		ControladorPrincipal.loadMenu();
         	}
         });
 	}

@@ -106,7 +106,7 @@ public class ImportComunitats_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadMenu();
+				ControladorPrincipal.loadMenu();
 					
 			}
 		});
@@ -118,12 +118,12 @@ public class ImportComunitats_Activity extends JPanelFondo{
 				if (aux.exists()){
 					JTree tree = null;
 					try {
-						tree = Principal.getIO().llegirSolucio(na);
+						tree = ControladorPrincipal.getIO().llegirSolucio(na);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 					deleteView();
-					Principal.loadVeureComunitats(tree, na);
+					ControladorPrincipal.loadVeureComunitats(tree, na);
 				} else warning.setText("L'arxiu " + na + " no existeix!");
 			}
 		});

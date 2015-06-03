@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import prop.g12.diputats.ui.JPanelFondo;
-import prop.g12.diputats.ui.Principal;
+import prop.g12.diputats.ui.ControladorPrincipal;
 
 public class VeureEsdeveniment_Activity extends JPanelFondo{
 	
@@ -175,7 +175,7 @@ public class VeureEsdeveniment_Activity extends JPanelFondo{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deleteView();
-				Principal.loadEditarEsdeveniment(codi,descripcio,data, participants);
+				ControladorPrincipal.loadEditarEsdeveniment(codi,descripcio,data, participants);
 					
 			}
 		});
@@ -183,12 +183,12 @@ public class VeureEsdeveniment_Activity extends JPanelFondo{
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Principal.getCE().baixaEsdeveniment(codi);
+					ControladorPrincipal.getCE().baixaEsdeveniment(codi);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				deleteView();
-				Principal.loadEsdeveniments();
+				ControladorPrincipal.loadEsdeveniments();
 					
 			}
 		});
@@ -196,7 +196,7 @@ public class VeureEsdeveniment_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadBuscarEsdeveniment();
+        		ControladorPrincipal.loadBuscarEsdeveniment();
         	}
         });
 	}

@@ -91,14 +91,14 @@ public class VeureGraf_Activity extends JPanelFondo{
 			public void actionPerformed(ActionEvent arg0) {
 				//Generar Solucio
 				deleteView();
-				Principal.loadVeureComunitats(tree,nomF);	
+				ControladorPrincipal.loadVeureComunitats(tree,nomF);	
 			}
 		});
 		
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadEscollirParametres();
+        		ControladorPrincipal.loadEscollirParametres();
         	}
         });
 	}

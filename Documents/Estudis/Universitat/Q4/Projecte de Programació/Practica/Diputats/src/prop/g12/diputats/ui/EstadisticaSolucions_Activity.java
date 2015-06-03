@@ -152,7 +152,7 @@ public class EstadisticaSolucions_Activity extends JPanelFondo{
 		enrere.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		deleteView();
-        		Principal.loadTriarEstadistica();
+        		ControladorPrincipal.loadTriarEstadistica();
         	}
         });
 		
