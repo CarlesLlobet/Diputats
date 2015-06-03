@@ -7,12 +7,12 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JTree;
 
-import prop.g12.diputats.ControladorAlgorisme;
-import prop.g12.diputats.ControladorIO;
-import prop.g12.diputats.ControladorSolucio;
 import prop.g12.diputats.data.ControladorCongres;
 import prop.g12.diputats.data.ControladorDiputat;
 import prop.g12.diputats.data.ControladorEsdeveniment;
+import prop.g12.diputats.data.ControladorIO;
+import prop.g12.diputats.domain.ControladorAlgorisme;
+import prop.g12.diputats.domain.ControladorSolucio;
 import prop.g12.diputats.ui.congressos.Congressos_Activity;
 import prop.g12.diputats.ui.congressos.EditarCongres_Activity;
 import prop.g12.diputats.ui.congressos.ExportCongres_Activity;

@@ -1,4 +1,4 @@
-package prop.g12.diputats;
+package prop.g12.diputats.data;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,8 +18,8 @@ import javax.swing.JTree;
 
 import prop.g12.common.Graf;
 import prop.g12.common.Solucio;
-import prop.g12.diputats.data.*;
 import prop.g12.diputats.domain.ControladorEstadistica;
+import prop.g12.diputats.domain.ControladorSolucio;
 
 public class ControladorIO {
 	

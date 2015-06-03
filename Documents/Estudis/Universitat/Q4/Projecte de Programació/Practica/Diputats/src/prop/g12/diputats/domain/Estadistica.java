@@ -82,6 +82,7 @@ public class Estadistica {
             JFreeChart chart;
             String titol;
             String condicio;
+            if (Max == 0) Max = 5.0;
             if (Int){ titol = "Temps d'execució entre algoritmes"; condicio = "Nombre de Diputats";}
             else{ titol = "Temps d'execucio de les solucions"; condicio = "Solucions";}
             chart = ChartFactory.createXYLineChart(titol, condicio, "Temps (milisegons)",

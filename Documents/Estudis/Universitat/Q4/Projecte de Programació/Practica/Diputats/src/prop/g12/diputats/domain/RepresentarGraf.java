@@ -15,8 +15,8 @@ import javax.imageio.ImageIO;
 
 import prop.g12.common.Graf;
 import prop.g12.common.Solucio;
-import prop.g12.diputats.ControladorIO;
 import prop.g12.diputats.data.ControladorCongres;
+import prop.g12.diputats.data.ControladorIO;
 import prop.g12.diputats.data.Diputat;
 import prop.g12.diputats.mxgraph.util.mxCellRenderer;
 import prop.g12.diputats.mxgraph.util.mxConstants;

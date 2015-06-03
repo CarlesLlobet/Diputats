@@ -4,10 +4,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
  
+import java.util.Iterator;
+
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYSeriesCollection;
  
+
 import prop.g12.diputats.ControladorIO;
  
 public class ControladorEstadistica {
@@ -16,11 +19,7 @@ public class ControladorEstadistica {
 		private double MaxNG;
 		private double MaxC;
        
-        public ControladorEstadistica() {
-        	MaxL = 5.0;
-        	MaxNG = 5.0;
-        	MaxC = 5.0;
-        }
+        public ControladorEstadistica() {}
  
         public Estadistica creaEstadistica() {
                 return new Estadistica();
@@ -164,6 +163,30 @@ public class ControladorEstadistica {
             setMapLouvainNodes(ML);
             HashMap<Integer,Double> MC = ctrlIO.llegirEstadisticaAlg("clique");
             setMapCliqueNodes(MC);
+            
+            MaxNG = 10.0;
+            MaxL = 10.0;
+            MaxC = 10.0;
+            
+            Iterator<Integer> it = MNG.keySet().iterator();
+            while (it.hasNext()) {
+            	double valor = MNG.get(it.next());
+            	if (valor > MaxNG) MaxNG = valor;
+            }
+            MaxNG+=10;
+            it = ML.keySet().iterator();
+            while (it.hasNext()) {
+            	double valor = ML.get(it.next());
+            	if (valor > MaxL) MaxL = valor;
+            }   
+            MaxL+=10;
+            it = MC.keySet().iterator();
+            while (it.hasNext()) {
+            	double valor = MC.get(it.next());
+            	if (valor > MaxC) MaxC = valor;
+            }       
+            MaxC+=10;
+            
             //Gràfica buida
             try {
                 final JFreeChart grafica = Estadistica.crearGrafica(coleccio1, 10, true);
@@ -198,7 +221,8 @@ public class ControladorEstadistica {
             //Gràfica NewmanGirvan + Louvain
             incloureSolucionsLouvainNodes(coleccio1);
             try {
-                if (MaxNG > MaxL) auxMax = MaxNG; else auxMax = MaxL;
+                if (MaxNG > MaxL) auxMax = MaxNG; 
+                else auxMax = MaxL;
                 final JFreeChart grafica = Estadistica.crearGrafica(coleccio1, auxMax, true);
                 ChartUtilities.saveChartAsJPEG(new File("io/"+"estadisticaNodes4"+".jpeg"), grafica, 1200, 600);
             } catch (Exception e) {
@@ -207,7 +231,8 @@ public class ControladorEstadistica {
             //Gràfica NewmanGirvan + Clique
             incloureSolucionsNGNodes(coleccio3);
             try {
-                if (MaxNG > MaxC) auxMax = MaxNG; else auxMax = MaxC;
+                if (MaxNG > MaxC) auxMax = MaxNG; 
+                else auxMax = MaxC;
                 final JFreeChart grafica = Estadistica.crearGrafica(coleccio3, auxMax, true);
                 ChartUtilities.saveChartAsJPEG(new File("io/"+"estadisticaNodes2"+".jpeg"), grafica, 1200, 600);
             } catch (Exception e) {
@@ -216,7 +241,8 @@ public class ControladorEstadistica {
             //Gràfica Louvain + Clique
             incloureSolucionsCliqueNodes(coleccio2);
             try {
-                if (MaxL > MaxC) auxMax = MaxL; else auxMax = MaxC;
+                if (MaxL > MaxC) auxMax = MaxL; 
+                else auxMax = MaxC;
                 final JFreeChart grafica = Estadistica.crearGrafica(coleccio2, auxMax, true);
                 ChartUtilities.saveChartAsJPEG(new File("io/"+"estadisticaNodes1"+".jpeg"), grafica, 1200, 600);
             } catch (Exception e) {
@@ -225,8 +251,10 @@ public class ControladorEstadistica {
             //Gràfica NewmanGirvan + Louvain + Clique
             incloureSolucionsCliqueNodes(coleccio1);
             try {
-                if (MaxNG > MaxL) auxMax = MaxNG; else auxMax = MaxL;
+            	auxMax = MaxL;
+                if (MaxNG > auxMax) auxMax = MaxNG; 
                 if (auxMax < MaxC) auxMax = MaxC;
+
                 final JFreeChart grafica = Estadistica.crearGrafica(coleccio1, auxMax, true);
                 ChartUtilities.saveChartAsJPEG(new File("io/"+"estadisticaNodes"+".jpeg"), grafica, 1200, 600);
             } catch (Exception e) {
