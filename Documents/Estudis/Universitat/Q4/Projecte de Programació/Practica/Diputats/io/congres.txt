@@ -1,0 +1,121 @@
+7
+Carlos Perez
+centre
+NY
+General Motors
+comercial
+
+Jordi Garcia
+esquerra
+Texas
+ING Direct
+comercial
+
+Ramon Lopez
+dreta
+Washington
+Google
+serveis
+
+Martin Vasco
+esquerra
+NY
+Google
+serveis
+
+Alberto Bueno
+centre
+SA
+Facebook
+comercial
+
+Manel Frigola
+dreta
+Miami
+IBM
+industria
+
+Maria Plaza
+esquerra
+SA
+IBM
+industria
+
+9
+0
+reunio
+21/01/2015-12:00:00
+2
+Ramon Lopez
+Jordi Garcia
+
+1
+conferencia
+23/03/2015-11:30:00
+1
+Ramon Lopez
+
+2
+votacio
+22/02/2015-17:25:35
+4
+Carlos Perez
+favor
+Ramon Lopez
+favor
+Jordi Garcia
+contra
+Maria Plaza
+abstencio
+
+3
+reunio
+21/01/2015-14:15:00
+2
+Alberto Bueno
+Manel Frigola
+
+4
+conferencia
+23/03/2015-08:00:00
+1
+Manel Frigola
+
+5
+votacio
+22/12/2015-13:30:35
+5
+Carlos Perez
+favor
+Ramon Lopez
+favor
+Manel Frigola
+favor
+Alberto Bueno
+abstencio
+Maria Plaza
+favor
+
+6
+conferencia
+01/05/2015-12:30:00
+3
+Ramon Lopez
+Alberto Bueno
+Maria Plaza
+
+7
+conferencia
+20/08/2015-19:30:00
+2
+Carlos Perez
+Manel Frigola
+
+8
+conferencia
+02/02/2015-08:45:00
+3
+Carlos Perez
+Manel Frigola
+Maria Plaza
+
