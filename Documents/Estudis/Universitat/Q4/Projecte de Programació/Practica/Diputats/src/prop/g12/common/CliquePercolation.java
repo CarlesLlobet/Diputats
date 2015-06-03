@@ -53,14 +53,14 @@ public class CliquePercolation<T> extends Algorisme<T> {
      * {@inheritDoc}
      */
     public Solucio<T> generarSolucio(Graf<T> g) {
-        return generateSolution(new AffinitiesGraph<T>(g), true);
+        return generateSolution(new AffinitiesGraph<T>(g), false);
     }
 
     /**
      * Implementation of Clique Percolation using an alternative class for graphs.
      */
     public Solucio<T> generateSolution(AffinitiesGraph<T> g) {
-        return generateSolution(g, false);
+        return generateSolution(g, true);
     }
 
     /**
@@ -144,28 +144,35 @@ public class CliquePercolation<T> extends Algorisme<T> {
     }
 
     private void applyMaityKumarTweaks(AffinitiesGraph<T> g, ArrayList<HashSet<T>> communities) {
-        Set<T> leftOutNodes = g.getNodes();
+        HashSet<T> leftOutNodes = g.getNodes();
         for (HashSet<T> community : communities) {
             leftOutNodes.removeAll(community);
         }
 
         // We take apart the "very lonely" nodes because Maity-Kumar tweaks don't handle them in a graceful way.
         // We'll create a singleton community for every one of them at the end of the Maity-Kumar tweaks.
-        HashSet<T> singletons = new HashSet<>();
+        HashSet<T> singletons;
 
-        for(T leftOutNode : leftOutNodes) {
-            boolean connected = false;
-            for (T node : g.getAdjacentNodes(leftOutNode)) {
-                if (g.getEdge(leftOutNode, node) >= threshold)  {
-                    connected = true;
-                    break;
+        if (communities.size() > 0) {
+            singletons = new HashSet<>();
+
+            for (T leftOutNode : leftOutNodes) {
+                boolean connected = false;
+                for (T node : g.getAdjacentNodes(leftOutNode)) {
+                    if (g.getEdge(leftOutNode, node) >= threshold) {
+                        connected = true;
+                        break;
+                    }
+                }
+                if (!connected) {
+                    singletons.add(leftOutNode);
                 }
             }
-            if (!connected) {
-                singletons.add(leftOutNode);
-            }
+            leftOutNodes.removeAll(singletons);
+        } else {
+            singletons = leftOutNodes;
+            leftOutNodes = new HashSet<>();
         }
-        leftOutNodes.removeAll(singletons);
 
         // This numbers will be used to compute a "belonging score".
         HashMap<T, Double> weightsSums = new HashMap<>(leftOutNodes.size());
