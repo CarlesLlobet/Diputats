@@ -1,0 +1,42 @@
+3
+Comunitat 0
+2
+D6
+dreta
+Tennessee 
+
+D2
+dreta
+New Jersey 
+
+
+Comunitat 1
+3
+D4
+esquerra
+Alabama 
+
+D0
+esquerra
+Nevada 
+
+D8
+centre
+New Mexico 
+
+
+Comunitat 2
+3
+D7
+dreta
+Minnesota 
+
+D3
+dreta
+New York 
+
+D1
+esquerra
+Nevada 
+
+

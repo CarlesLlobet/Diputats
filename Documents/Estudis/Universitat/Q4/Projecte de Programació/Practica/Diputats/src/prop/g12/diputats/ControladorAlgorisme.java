@@ -4,14 +4,17 @@ import java.io.IOException;
 import java.util.ArrayList;
  
 
+
 import javax.swing.JTree;
  
+
 
 import prop.g12.common.CliquePercolation;
 import prop.g12.common.Graf;
 import prop.g12.common.Louvain;
 import prop.g12.common.NewmanGirvan;
 import prop.g12.common.Solucio;
+import prop.g12.diputats.data.Congres;
 import prop.g12.diputats.data.ControladorCongres;
 import prop.g12.diputats.data.Diputat;
 import prop.g12.diputats.domain.Afinitat;
@@ -43,9 +46,10 @@ public class ControladorAlgorisme {
         		ControladorIO ctrlIO = new ControladorIO();
                 ControladorEstadistica ctrlEst= new ControladorEstadistica();
                 ControladorSolucio ctrlSol = new ControladorSolucio();
-                ControladorCongres ctrlCongres = new ControladorCongres();
                 Graf <Diputat> G = crearGraf(opt, pEmp, pIde, pPro, pEsd);
-                ctrlCongres.setGraf(G);
+                
+				Congres.setGraf(G);
+               
                 int numNodes = G.getNumNodes();
                
                 double temps = 0;
@@ -88,8 +92,7 @@ public class ControladorAlgorisme {
                 ctrlIO.escriureEstadistica(opt, temps);
                 ctrlIO.escriureEstadistica(opt, numNodes, temps);
                
-                //G = crearGraf(opt, pEmp, pIde, pPro, pEsd);
-                G = ctrlCongres.getGraf();
+				G = Congres.getGraf();
                 
                 
                 RepresentarGraf rg = new RepresentarGraf();
