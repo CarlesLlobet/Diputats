@@ -34,6 +34,9 @@ public class ControladorIO {
 	private ControladorSolucio ctrlSolucio;
 	private ControladorEstadistica ctrlEstadistica;
 	
+	/**
+	 * Creadora per defecte de la classe ControladorIO
+	 */
 	public ControladorIO() {
 		ctrlCongres = new ControladorCongres();
 		ctrlDiputat = new ControladorDiputat();
@@ -47,6 +50,11 @@ public class ControladorIO {
 		ctrlEstadistica = new ControladorEstadistica();
 	}
 	
+	/**
+	 * Llegeix un congres
+	 * @param string: Nom del fitxer
+	 * @throws Exception 
+	 */
 	public void llegirCongres(String string) throws Exception {
 		File file = new File("io/" + string + ".txt");
 		Scanner input;
@@ -136,6 +144,12 @@ public class ControladorIO {
 		input.close();
 	}
 	
+	/**
+	 * Genera un objecte tipus Congres amb valors randoms
+	 * @param nDip: Numero de diputats del Congres
+	 * @param nEsd: Numero d'Esdeveniments del Congres
+	 * @throws Exception
+	 */
 	public void generarRandom(int nDip, int nEsd) throws Exception {
 		File procs = new File("io/procedencia.txt");
 		Scanner input;
@@ -276,6 +290,10 @@ public class ControladorIO {
 		input2.close();
 	}
 	
+	/**
+	 * Escriu al congres
+	 * @param s: Nom del fitxer
+	 */
 	public void escriureCongres(String s) {
 		File out = new File("io/" + s + ".txt");
 		PrintWriter output = null;
@@ -335,6 +353,11 @@ public class ControladorIO {
 		output.close();
 	}
 	
+	/**
+	 * Escriu les adjacencies d'un graf
+	 * @param G: Graf on s'escriuen les adjacencies
+	 * @throws Exception
+	 */
 	public void escriureAdjacencia(Graf<Diputat> G) throws Exception {
 		File file = new File("io/graf.txt");
 		PrintWriter output = null;
@@ -370,6 +393,11 @@ public class ControladorIO {
 		}
 	}
 	
+	/**
+	 * Llegeix les adjacencies d'un graf
+	 * @return retorna un graf amb les adjacencies llegides
+	 * @throws Exception
+	 */
 	public Graf<Diputat> llegirAdjacencia() throws Exception {
 		File file = new File("io/graf.txt");
 		Scanner input = null;
@@ -412,6 +440,11 @@ public class ControladorIO {
 		return G;
 	}
 	
+	/**
+	 * Llegeix una solucio
+	 * @param nomF: Nom del fitxer de la solucio
+	 * @return Retorna la solucio en fora de JTree
+	 */
 	public JTree llegirSolucio(String nomF) {
 		JTree tree = null;
 		Solucio<Diputat> sol = ctrlSolucio.creaSolucio();		
@@ -453,6 +486,11 @@ public class ControladorIO {
 		return tree;		
 	}
 	
+	/**
+	 * Escriu una Solucio
+	 * @param solucio: Solucio a posar al fitxer
+	 * @param nomF: fitxer on es crea la Solucio
+	 */
 	public void escriureSolucio(Solucio<Diputat> solucio, String nomF) {
 		File file = new File("io/" + nomF + ".txt");
 		Diputat diputat = null;
@@ -488,6 +526,11 @@ public class ControladorIO {
 		output.close();
 	}
 	
+	/**
+	 * Crea un ArrayList amb els temps d'execució
+	 * @param algorisme: s'indica l'algorisme del qual es volen els temps d'execució
+	 * @return Retorna un ArrayList amb els temps exec.
+	 */
 	public ArrayList<Double> llegirEstadistica(String algorisme) {
 		File file = new File("io/historial" + algorisme + ".txt");
 		ArrayList<Double> temps = new ArrayList<Double>();
@@ -541,6 +584,11 @@ public class ControladorIO {
 		return temps;
 	}
 	
+	/**
+	 * Obte els parells nodes, temps execució d'un algoritme concret
+	 * @param opt: algoritme del qual es volen les parelles nodes, temps execucio
+	 * @return Retorna un HashMap<Integer,Double> amb els parells nodes, temps execucio
+	 */
 	public HashMap<Integer,Double> llegirEstadisticaAlg(String opt) {
 		File file = new File("io/historial.txt");
 		Scanner input = null;
@@ -597,6 +645,11 @@ public class ControladorIO {
 		return map;
 	}
 	
+	/**
+	 * Escriu a l'historial del Algoritme "algorisme", actualitzant les dades 
+	 * @param algorisme: algorisme on s'actualitza les dades
+	 * @param temps: temps a actualitzar
+	 */
 	public void escriureEstadistica(String algorisme, double temps) {
 		File file = new File("io/historial" + algorisme + ".txt");
 		PrintWriter output = null;
@@ -618,6 +671,12 @@ public class ControladorIO {
 		output.close();
 	}
 	
+	/**
+	 * Escriu a l'historial, actualitzant les dades
+	 * @param algorisme: algorisme a actualitzar
+	 * @param numNodes: nodes a ficar que ha fet la solucio
+	 * @param temps: temps que ha trigat l'execucio
+	 */
 	public void escriureEstadistica(String algorisme, int numNodes, double temps) {
 		File file = new File("io/historial.txt");
 		PrintWriter output = null;
