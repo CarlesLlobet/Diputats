@@ -16,7 +16,6 @@ import javax.imageio.ImageIO;
 import prop.g12.common.Graf;
 import prop.g12.common.Solucio;
 import prop.g12.diputats.data.ControladorCongres;
-import prop.g12.diputats.data.ControladorIO;
 import prop.g12.diputats.data.Diputat;
 import prop.g12.diputats.mxgraph.util.mxCellRenderer;
 import prop.g12.diputats.mxgraph.util.mxConstants;
@@ -36,13 +35,6 @@ public class RepresentarGraf{
 		
 		ControladorCongres ctrlCongres = new ControladorCongres();
 		Graf<Diputat> G = ctrlCongres.getGraf();
-		
-		ControladorIO ctrlIO = new ControladorIO();
-		try {
-			ctrlIO.escriureAdjacencia(G);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
 		
 		final mxGraph graph = new mxGraph();
 		

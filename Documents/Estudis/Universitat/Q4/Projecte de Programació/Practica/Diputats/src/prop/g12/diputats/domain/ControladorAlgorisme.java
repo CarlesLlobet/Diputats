@@ -5,8 +5,10 @@ import java.util.ArrayList;
  
 
 
+
 import javax.swing.JTree;
  
+
 
 
 import prop.g12.common.CliquePercolation;
@@ -86,6 +88,7 @@ public class ControladorAlgorisme {
         Graf<Diputat> crearGraf(String opt, int pEmp, int pIde, int pPro, int pEsd) {
                 Graf<Diputat> G = new Graf<Diputat>();
                 Afinitat afinitat = ctrlAfinitat.creaAfinitat();
+                ControladorIO ctrlIO = new ControladorIO();
                 ArrayList<Diputat> dips = ControladorCongres.getDiputats();
                 for(int j = 0; j < dips.size(); j++) {
                         for(int k = 0; k < dips.size(); k++) {
@@ -107,6 +110,12 @@ public class ControladorAlgorisme {
                                 }
                         }
                 }
+                try {
+					ctrlIO.escriureAdjacencia(G);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
                 return G;
         }
         
