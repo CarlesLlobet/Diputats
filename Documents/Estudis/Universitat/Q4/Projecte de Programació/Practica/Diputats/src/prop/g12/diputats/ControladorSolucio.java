@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JTree;
 
-import prop.g12.common.Graf;
 import prop.g12.common.Solucio;
 import prop.g12.diputats.data.ControladorCongres;
 import prop.g12.diputats.data.ControladorDiputat;

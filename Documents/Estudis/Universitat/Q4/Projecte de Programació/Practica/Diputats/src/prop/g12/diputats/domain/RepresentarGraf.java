@@ -124,7 +124,7 @@ public class RepresentarGraf{
 			y = 0;
 			for(int j = 0; j < dips.size(); j++) {
 				Diputat dip = dips.get(j);				
-				Object v1 = graph.insertVertex(null, null, dip.getNom(), x, y, 100, 20,"ROUNDED;strokeColor=red;fillColor="+colors[j]);
+				graph.insertVertex(null, null, dip.getNom(), x, y, 100, 20,"ROUNDED;strokeColor=red;fillColor="+colors[j]);
 				x += 150;
 				if (x >= 500) {
 					x = 0;
