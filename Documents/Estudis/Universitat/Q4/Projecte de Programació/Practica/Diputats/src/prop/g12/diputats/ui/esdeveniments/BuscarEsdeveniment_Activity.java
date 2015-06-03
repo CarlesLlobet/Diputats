@@ -144,14 +144,6 @@ public class BuscarEsdeveniment_Activity extends JPanelFondo{
 					deleteView();
 					ControladorPrincipal.loadVeureEsdeveniments(ce, info.get(1), info.get(2), esdev);
 				}else warning.setText("L'esdeveniment amb codi " + ce + " no existeix!");
-					/*JTree esdev = null;
-					try {
-						esdev = Principal.getCC().getArbreParticipants(ce);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					deleteView();
-					Principal.loadVeureEsdeveniments(ce, info.get(0), info.get(1), esdev);*/
 			}
 		});
 	}

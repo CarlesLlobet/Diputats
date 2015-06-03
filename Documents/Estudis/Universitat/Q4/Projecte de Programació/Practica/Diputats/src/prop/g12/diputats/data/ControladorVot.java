@@ -15,10 +15,6 @@ public class ControladorVot {
 		return new Vot();
 	}
 	
-	/*public Vot Vot(Congres c, String v, Diputat d, Votacio vota) throws Exception{
-		return new Vot(c,v,d,vota);
-	}*/
-	
 	/**
 	 * 
 	 * @param vot: String que representa el vot del diputat

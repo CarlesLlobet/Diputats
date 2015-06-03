@@ -88,9 +88,9 @@ public class Estadistica {
             chart = ChartFactory.createXYLineChart(titol, condicio, "Temps (milisegons)",
                 dataset,
                 PlotOrientation.VERTICAL,
-                true, // us de leyenda
-                false, // us de tooltips  
-                false // us de urls
+                true,
+                false, 
+                false 
                 );
             // color de fondo de la gràfica
             chart.setBackgroundPaint(COLOR_FONDO_GRAFICA);

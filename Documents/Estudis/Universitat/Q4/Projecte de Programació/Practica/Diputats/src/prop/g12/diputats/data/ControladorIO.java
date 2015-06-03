@@ -597,37 +597,6 @@ public class ControladorIO {
 		return map;
 	}
 	
-	/*public HashMap<String,Double> llegirEstadisticaNom(String opt) {
-		File file = new File("io/historial.txt");
-		Scanner input = null;
-		try {
-			input = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		HashMap<String, Double> map = null;
-		String nomSolucio, algorisme;
-		int numNodes;
-		double temps;
-		while(input.hasNextLine()) {
-			nomSolucio = input.nextLine();
-			algorisme = input.nextLine();
-			if (algorisme.equals(opt)) {
-				numNodes = input.nextInt();
-				temps = input.nextInt();
-				map.put(nomSolucio, temps);
-				input.nextLine();
-			}
-			else {
-				numNodes = input.nextInt();
-				temps = input.nextInt();
-				input.nextLine();
-			}
-		}
-		input.close();
-		return map;
-	}*/
-	
 	public void escriureEstadistica(String algorisme, double temps) {
 		File file = new File("io/historial" + algorisme + ".txt");
 		PrintWriter output = null;

@@ -43,9 +43,7 @@ public class Diputat {
 		nom = n;
 		try {
 			ideologia = stringToIdeologia(i);
-		} catch (Exception e) {
-			//posar excepcio
-		}
+		} catch (Exception e) {}
 		procedencia = p;
 		esdv = new ArrayList<Esdeveniment>();
 	}
@@ -76,21 +74,7 @@ public class Diputat {
 		else if (s.equals("centre")) return TIdeologia.centre;
 		else throw new Exception("No existeix la ideologia amb nom "+ s +"\n");	
 	}
-	
-	/**
-	 * @return: Transforma un TIdeologia en un String
-	 * @param a: Ideologia a transformar en String (centre, esquerra, dreta)
-	 * @return esquerra: ideologia d'esquerra, dreta: ideologia de dreta, centre: ideologia de centre
-	 * @throws Exception: Si no es cap dels anteriors, exception
-	 */
-	/*
-	private String ideologiaToString(TIdeologia a) throws Exception {
-		if (a.equals(TIdeologia.esquerra))return "esquerra";				
-		else if (a.equals(TIdeologia.dreta)) return "dreta";
-		else if (a.equals(TIdeologia.centre)) return "centre";
-		else throw new Exception("No existeix la ideologia amb nom "+ a +"\n");	
-	}*/
-	
+
 	/**
 	 * @return: Retorna la procedencia del Diputat
 	 */

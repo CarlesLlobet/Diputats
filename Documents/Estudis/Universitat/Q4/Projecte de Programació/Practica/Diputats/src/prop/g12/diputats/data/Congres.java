@@ -135,33 +135,6 @@ public class Congres {
 		if(!empreses.contains(empresa)) empreses.add(empresa);
 	}
 	
-	/**
-	 * Pre: -
-	 * @param conferencia: Conferencia a afegir al llistat d'esdeveniments
-	 * Post: Afegeix la conferencia al llistat d'esdeveniments en cas que no hi fos
-	 */
-	/*public static void altaConferencia(Conferencia conferencia) {
-		if(!esdeveniments.contains(conferencia)) esdeveniments.add(conferencia);		
-	}*/
-	
-	/**
-	 * Pre: -
-	 * @param votacio: Votacio a afegir al llistat d'esdeveniments
-	 * Post: Afegeix la votacio al llistat d'esdeveniments en cas que no hi fos
-	 */
-	/*public static void altaVotacio(Votacio votacio) {
-		if(!esdeveniments.contains(votacio)) esdeveniments.add(votacio);		
-	}*/
-	
-	/**
-	 * Pre: -
-	 * @param reunio: Reunio a afegir al llistat d'esdeveniments
-	 * Post: Afegeix la reunio al llistat d'esdeveniments en cas que no hi fos
-	 */
-	/*public static void altaReunio(Reunio reunio) {
-		if(!esdeveniments.contains(reunio)) esdeveniments.add(reunio);		
-	}*/
-	
 	public static void altaEsdeveniment(Esdeveniment esdeveniment) {
 		if(!esdeveniments.contains(esdeveniment)) esdeveniments.add(esdeveniment);
 	}

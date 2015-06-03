@@ -109,13 +109,6 @@ public class ControladorCongres {
 		Congres.altaEmpresa(empresa);
 	}
 	
-	/*public void altaConferencia(Conferencia conferencia) {
-		Congres.altaConferencia(conferencia);		
-	}
-	
-	public void altaVotacio(Votacio votacio) {
-		Congres.altaVotacio(votacio);		
-	}*/
 	/**
 	 * Pre: -
 	 * @param esdeveniment
@@ -124,10 +117,6 @@ public class ControladorCongres {
 	public void altaEsdeveniment(Esdeveniment esdeveniment) {
 		Congres.altaEsdeveniment(esdeveniment);
 	}
-	
-	/*public void altaReunio(Reunio reunio) {
-		Congres.altaReunio(reunio);		
-	}*/
 	
 	/**
 	 * Pre: El diputat amb nom nom es al congres
@@ -221,10 +210,18 @@ public class ControladorCongres {
 		return Congres.getNumDiputats();
 	}
 	
+	/**
+	 * Pre: -
+	 * @return l'instancia de graf que hi ha en el congres actual
+	 */
 	public Graf<Diputat> getGraf() {
 		return Congres.getGraf();
 	}
 	
+	/**
+	 * Pre: -
+	 * @param graf: Graf que es guarda al congres actual
+	 */
 	public void setGraf(Graf<Diputat> graf) {
 		Congres.setGraf(graf);
 	}
@@ -292,34 +289,6 @@ public class ControladorCongres {
 		tree = new JTree(root);
 		return tree;
 	}
-	
-	/*public JTree getArbreDiputats(int codi) throws Exception {
-		Esdeveniment esdeveniment = cercaEsdeveniment(codi);
-		ArrayList<Diputat> diputats = ctrlEsdeveniment.getDiputats(esdeveniment);
-		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Esdeveniments");
-		DefaultMutableTreeNode nodeDiputat, ideologia, procedencia, nomEmpresa,
-		   ambitEmpresa;
-		Diputat diputat;
-		Empresa empresa;
-		for(int i = 0; i < diputats.size(); i++) {
-			diputat = diputats.get(i);
-			nodeDiputat = new DefaultMutableTreeNode(ctrlDiputat.getNom(diputat));
-			ideologia = new DefaultMutableTreeNode(ctrlDiputat.getIdeologia(diputat));
-			nodeDiputat.add(ideologia);
-			procedencia = new DefaultMutableTreeNode(ctrlDiputat.getProcedencia(diputat));
-			nodeDiputat.add(procedencia);
-			empresa = diputat.getEmpresa();
-			nomEmpresa = new DefaultMutableTreeNode(ctrlEmpresa.getNom(empresa));
-			nodeDiputat.add(nomEmpresa);
-			ambitEmpresa = new DefaultMutableTreeNode(ctrlEmpresa.getAmbit(empresa));
-			nodeDiputat.add(ambitEmpresa);
-			JTree esdeveniments = getArbreEsdeveniments(ctrlDiputat.getNom(diputat));
-			nodeDiputat.add((MutableTreeNode) esdeveniments.getModel().getRoot());				
-			root.add(nodeDiputat);			
-		}
-		JTree tree = new JTree(root);
-		return tree;
-	}*/
 	
 	/**
 	 * 
