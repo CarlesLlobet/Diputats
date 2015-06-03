@@ -53,7 +53,7 @@ public class ControladorAlgorisme {
                         break;
                        
                 case "clique":
-                        CliquePercolation<Diputat> alg2 = new CliquePercolation<Diputat>(3,0.2);
+                        CliquePercolation<Diputat> alg2 = new CliquePercolation<Diputat>(3,0.1);
                         s = alg2.generarSolucio(G);
                         temps = ctrlSol.getTempsExec(s);
                         break;

@@ -60,7 +60,7 @@ public class CliquePercolation<T> extends Algorisme<T> {
      * Implementation of Clique Percolation using an alternative class for graphs.
      */
     public Solucio<T> generateSolution(AffinitiesGraph<T> g) {
-        return generateSolution(g, true);
+        return generateSolution(g, false);
     }
 
     /**
